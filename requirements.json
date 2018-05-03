@@ -1,10 +1,6 @@
-{
-  "name": "Rama-Bot",
-  "description": "A Discord bot",
-  "version": "0.0.0",
-  "main": "source2.py",
-  "dependencies": {
-    "discord.py": ,
-    "request": "2.81.0"
-  }
-}
+
+discord.py==0.16.12
+random
+asyncio
+urllib
+urllib.request
