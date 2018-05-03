@@ -1,0 +1,10 @@
+{
+  "name": "Rama-Bot",
+  "description": "A Discord bot",
+  "version": "0.0.0",
+  "main": "source2.py",
+  "dependencies": {
+    "discord.py": ,
+    "request": "2.81.0"
+  }
+}
