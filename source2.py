@@ -101,12 +101,20 @@ r!randomfgo - *Posts a random page from the F/GO wiki.*
 r!kinassign - *Get your fresh F/GO kinnies here!*
 r!8ball - *Get Rama's opinion on things.*
 
+**F/GO Support Commands**
+r!aster - *For all your locker-shoving needs.*
+r!medb - *Stan Suffering in one image.*
+r!adv - *For when you can't be bothered to check up class advantages in game.*
+r!lancelot - *Lancelot's booty shorts in Rome.*
+r!supportgroup - *Sum up the server in an image.*
+r!birthday - *Happy Birthday!*
+
 **Command Spells**
 r!say - *Make Rama say something*
 r!changegame - *Change the game Rama is playing*""")
 
     if message.content.startswith("r!aster"):
-        goodbyes=["Goodbye.", "Sayonara.", "Omae wa mou shindeiru.","Hmph, it seems you have bad luck. For you to encounter me, Rama!"]
+        goodbyes=["Goodbye.", "Sayonara.","Hmph, it seems you have bad luck. For you to encounter me, Rama!"]
         choice=random.choice(goodbyes)
         await client.send_message(message.channel, choice)
         e = discord.Embed()
@@ -142,6 +150,11 @@ r!changegame - *Change the game Rama is playing*""")
     if message.content.startswith("r!lancelot"):
         e = discord.Embed()
         e.set_image(url="https://cdn.discordapp.com/attachments/439040144914251776/441676875136237579/ARE_YOU_LANCELOT.png")
+        await client.send_message(message.channel, embed = e)
+        
+    if message.content.startswith("r!adv"):
+        e = discord.Embed()
+        e.set_image(url="https://cdn.discordapp.com/attachments/439040144914251776/441684009857187840/class_adv.png")
         await client.send_message(message.channel, embed = e)
     
 
