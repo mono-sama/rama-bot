@@ -139,6 +139,11 @@ r!changegame - *Change the game Rama is playing*""")
         e.set_image(url="https://cdn.discordapp.com/attachments/441190970403323914/441574720761233408/Cy_rRxlUcAAYiC5.png")
         await client.send_message(message.channel, embed = e)
              
+    if message.content.startswith("r!lancelot"):
+        e = discord.Embed()
+        e.set_image(url="https://cdn.discordapp.com/attachments/439040144914251776/441676875136237579/ARE_YOU_LANCELOT.png")
+        await client.send_message(message.channel, embed = e)
+    
 
 @client.event
 async def on_ready():
