@@ -164,5 +164,5 @@ r!changegame - *Change the game Rama is playing*""")
 async def on_ready():
     print("Servant, Saber. Great King of Kosala, Rama. It's alright, leave it all to me!")
 
-s3 = S3Connection(os.environ['BOT_TOKEN'])
-client.run(s3)
+token=os.environ["BOT_TOKEN"]
+client.run(token)
