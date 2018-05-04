@@ -161,6 +161,5 @@ r!changegame - *Change the game Rama is playing*""")
 @client.event
 async def on_ready():
     print("Servant, Saber. Great King of Kosala, Rama. It's alright, leave it all to me!")
-
-
-client.run("NDM5MDM4NzI2MjMyOTk3ODk4.DcNkcA.3LifXMyrco4ezO7nItJ5cdfTGho")
+ 
+client.run(BOT_TOKEN)
