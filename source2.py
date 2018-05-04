@@ -4,6 +4,7 @@ import asyncio
 import random
 import urllib
 import urllib.request
+from boto.s3.connection import S3Connection
 
 
 client = discord.Client()
@@ -161,5 +162,6 @@ r!changegame - *Change the game Rama is playing*""")
 @client.event
 async def on_ready():
     print("Servant, Saber. Great King of Kosala, Rama. It's alright, leave it all to me!")
- 
-client.run(BOT_TOKEN)
+
+s3 = S3Connection(os.environ['BOT_TOKEN'])
+client.run(s3)
