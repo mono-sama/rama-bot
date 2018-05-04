@@ -163,6 +163,9 @@ r!changegame - *Change the game Rama is playing*""")
         fucksin=random.choice(locations)
         lancelotfucksin="*LANCELOT FUCKS IN " + fucksin + "*"
         await client.send_message(message.channel, lancelotfucksin)
+        e = discord.Embed()
+        e.set_image(url="https://cdn.discordapp.com/attachments/441831504604037122/441974102052306954/20180504_154700.png")
+        await client.send_message(message.channel, embed = e)
     
 
 @client.event
