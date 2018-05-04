@@ -105,10 +105,11 @@ r!8ball - *Get Rama's opinion on things.*
 **F/GO Support Commands**
 r!aster - *For all your locker-shoving needs.*
 r!medb - *Stan Suffering in one image.*
-r!adv - *For when you can't be bothered to check up class advantages in game.*
-r!lancelot - *Lancelot's booty shorts in Rome.*
+r!classes - *For when you can't be bothered to check up class advantages in game.*
+r!lancelot - *Lancelot fucks anywhere and everywhere.*
 r!supportgroup - *Sum up the server in an image.*
 r!birthday - *Happy Birthday!*
+r!nasty - *Are you nasty?*
 
 **Command Spells**
 r!say - *Make Rama say something*
@@ -153,9 +154,9 @@ r!changegame - *Change the game Rama is playing*""")
         e.set_image(url="https://cdn.discordapp.com/attachments/439040144914251776/441676875136237579/ARE_YOU_LANCELOT.png")
         await client.send_message(message.channel, embed = e)
         
-    if message.content.startswith("r!adv"):
+    if message.content.startswith("r!classes"):
         e = discord.Embed()
-        e.set_image(url="https://cdn.discordapp.com/attachments/439040144914251776/441684009857187840/class_adv.png")
+        e.set_image(url="https://cdn.discordapp.com/attachments/420827955779076096/441986891122868254/latest.png")
         await client.send_message(message.channel, embed = e)
         
     if message.content.startswith("r!lancelot"):
