@@ -5,6 +5,7 @@ import random
 import urllib
 import urllib.request
 from boto.s3.connection import S3Connection
+import os
 
 
 client = discord.Client()
