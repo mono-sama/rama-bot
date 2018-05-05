@@ -5,11 +5,6 @@ import random
 import urllib
 import urllib.request
 import os
-import aiohttp
-from io import BytesIO
-from PIL import Image, ImageDraw, ImageOps
-import requests
-
 
 client = discord.Client()
 
@@ -119,7 +114,7 @@ r!nasty - *Are you nasty?*
 r!say - *Make Rama say something*
 r!changegame - *Change the game Rama is playing*""")
 
-    if message.content.startswith("r!ramabully"):
+    if message.content.startswith("r!aster"):
         goodbyes=["Goodbye.", "Sayonara.","Hmph, it seems you have bad luck. For you to encounter me, Rama!"]
         choice=random.choice(goodbyes)
         await client.send_message(message.channel, choice)
@@ -170,34 +165,7 @@ r!changegame - *Change the game Rama is playing*""")
         e = discord.Embed()
         e.set_image(url="https://cdn.discordapp.com/attachments/441831504604037122/441974102052306954/20180504_154700.png")
         await client.send_message(message.channel, lancelotfucksin, embed = e)
-        
-        
-    if message.content.startswith("r!aster"):
-        user : discord.member = None
-        user=message.author
-        response = requests.get(url)
-        img = Image.open(StringIO(response.content))
-        with aiohttp.ClientSession() as session:
-            avatar = await session.get(user.avatar_url_as(format="png"))
-            data = await avatar.read()
-            av_bytes = BytesIO(data)
-            avatar = Image.open(av_bytes)
-        dest = (155, 70)
-        size = avatar.size
-        mask = Image.new('L', size, 0)
-        draw = ImageDraw.Draw(mask)
-        draw.ellipse((0, 0) + size, fill=255)
-        av = ImageOps.fit(avatar, mask.size, centering=(0.5, 0.5))
-        av.putalpha(mask)
-
-        face_1 = av.resize((78, 78), Image.LANCZOS)
-        face_1 = face_1.rotate(15, expand=True)
-
-        img1.paste(face_1, dest, face_1)
-
-        processed = BytesIO()
-        img1.save(processed, format="PNG")
-        await client.send_message(message.channel,file=discord.File(fp=processed.getvalue(), filename="aster.png"))
+  
 
 @client.event
 async def on_ready():
