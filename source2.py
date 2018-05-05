@@ -145,7 +145,7 @@ r!changegame - *Change the game Rama is playing*""")
             msg = "{0.author.mention}".format(message)
             await client.send_message(message.channel, msg + " Your Rama assigned kin is... %s" % saberkin)
             
-        if message.author.id == "227446010094288896":
+        elif message.author.id == "227446010094288896":
             msg = "{0.author.mention}".format(message)
             await client.send_message(message.channel, msg + " Your Rama assigned kin is... %s" % 'http://fategrandorder.wikia.com/wiki/Rama\n')
         
