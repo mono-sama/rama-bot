@@ -8,6 +8,7 @@ import os
 import aiohttp
 from io import BytesIO
 from PIL import Image, ImageDraw, ImageOps
+import requests
 
 
 client = discord.Client()
@@ -119,7 +120,7 @@ r!nasty - *Are you nasty?*
 r!say - *Make Rama say something*
 r!changegame - *Change the game Rama is playing*""")
 
-    if message.content.startswith("r!aster"):
+    if message.content.startswith("r!ramabully"):
         goodbyes=["Goodbye.", "Sayonara.","Hmph, it seems you have bad luck. For you to encounter me, Rama!"]
         choice=random.choice(goodbyes)
         await client.send_message(message.channel, choice)
@@ -174,7 +175,9 @@ r!changegame - *Change the game Rama is playing*""")
         
     if message.content.startswith("r!aster"):
         avatar=message.author
-        img1 = Image.open(fp=open("locker.png", "rb"))
+        url="https://cdn.discordapp.com/attachments/441831504604037122/442290910450024470/locker.png"
+        response = requests.get(url)
+        img = Image.open(StringIO(response.content))
         with aiohttp.ClientSession() as session:
             avatar = await session.get(user.avatar_url_as(format="png"))
             data = await avatar.read()
