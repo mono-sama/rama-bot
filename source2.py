@@ -173,8 +173,8 @@ r!changegame - *Change the game Rama is playing*""")
         
         
     if message.content.startswith("r!aster"):
+        user : discord.member = None
         user=message.author
-        url="https://cdn.discordapp.com/attachments/441831504604037122/442290910450024470/locker.png"
         response = requests.get(url)
         img = Image.open(StringIO(response.content))
         with aiohttp.ClientSession() as session:
@@ -182,7 +182,6 @@ r!changegame - *Change the game Rama is playing*""")
             data = await avatar.read()
             av_bytes = BytesIO(data)
             avatar = Image.open(av_bytes)
-
         dest = (155, 70)
         size = avatar.size
         mask = Image.new('L', size, 0)
