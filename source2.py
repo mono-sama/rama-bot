@@ -12,7 +12,6 @@ import requests
 
 
 client = discord.Client()
-bot = commands.Bot(command_prefix="!")
 
 @client.event
 async def on_message(message):
