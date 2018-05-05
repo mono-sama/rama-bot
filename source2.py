@@ -173,7 +173,7 @@ r!changegame - *Change the game Rama is playing*""")
         
         
     if message.content.startswith("r!aster"):
-        avatar=message.author
+        user=message.author
         url="https://cdn.discordapp.com/attachments/441831504604037122/442290910450024470/locker.png"
         response = requests.get(url)
         img = Image.open(StringIO(response.content))
