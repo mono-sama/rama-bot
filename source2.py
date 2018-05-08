@@ -5,6 +5,7 @@ import random
 import urllib
 import urllib.request
 import os
+import datetime
 
 client = discord.Client()
 
@@ -184,6 +185,19 @@ r!changegame - *Change the game Rama is playing*""")
         e.set_image(url="https://cdn.discordapp.com/attachments/441831504604037122/441974102052306954/20180504_154700.png")
         await client.send_message(message.channel, lancelotfucksin, embed = e)
   
+@client.event
+async def on_start():
+    # if for some reason this script is still running
+    # after a year, we'll stop after 365 days
+    for i in xrange(0,365):
+        # sleep until 2AM
+        t = datetime.datetime.today()
+        future = datetime.datetime(t.year,t.month,t.day,23,30)
+        if t.hour >= 2:
+            future += datetime.timedelta(days=1)
+        asyncio.sleep((future-t).seconds)
+        await client.send_message(bot.get_channel("441831504604037122"), "Ping")
+
 
 @client.event
 async def on_ready():
