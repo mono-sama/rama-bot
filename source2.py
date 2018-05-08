@@ -192,7 +192,7 @@ async def on_start():
     for i in xrange(0,365):
         # sleep until 2AM
         t = datetime.datetime.today()
-        future = datetime.datetime(t.year,t.month,t.day,23,30)
+        future = datetime.datetime(t.year,t.month,t.day,23,36)
         if t.hour >= 2:
             future += datetime.timedelta(days=1)
         asyncio.sleep((future-t).seconds)
