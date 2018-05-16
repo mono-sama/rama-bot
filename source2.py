@@ -32,11 +32,13 @@ async def on_message(message):
         await client.send_message(message.channel, "Hello!")
 
     if message.content.startswith("r!say"):
-        if message.author.id == "227446010094288896" or "414626125889667072" in [role.id for role in message.author.roles]:
+        if message.author.id == "227446010094288896":
             args = message.content.split(" ")
             await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
+            await client.delete_message(message)
         else:
-            await client.send_message(message.channel, "You can't make me do that!")
+            args = message.content.split(" ")
+            await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
 
 
     if message.content.startswith("r!happy"):
@@ -184,14 +186,6 @@ r!changegame - *Change the game Rama is playing*""")
         e = discord.Embed()
         e.set_image(url="https://cdn.discordapp.com/attachments/441831504604037122/441974102052306954/20180504_154700.png")
         await client.send_message(message.channel, lancelotfucksin, embed = e)
-    
-    if message.content.startswith('r!ghost'):
-        if message.author.id == "227446010094288896":
-            channel=bot.get_channel("446268259721805825")
-            args = message.content.split(" ")
-            await client.send_message(channel, "%s" % (" ".join(args[1:])))    
-        else:
-            await client,send_message(message.channel, "No.")
 
 @client.event
 async def on_ready():
