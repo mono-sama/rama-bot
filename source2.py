@@ -184,6 +184,14 @@ r!changegame - *Change the game Rama is playing*""")
         e = discord.Embed()
         e.set_image(url="https://cdn.discordapp.com/attachments/441831504604037122/441974102052306954/20180504_154700.png")
         await client.send_message(message.channel, lancelotfucksin, embed = e)
+    
+    if message.content.startswith('r!ghost'):
+        if message.author.id == "227446010094288896":
+            ch="446268259721805825"
+            channel=bot.get_channel(ch)
+            args = message.content.split(" ")
+            await client.send_message(channel, "%s" % (" ".join(args[1:]))
+    
 
 @client.event
 async def on_ready():
