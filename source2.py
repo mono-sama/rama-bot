@@ -190,8 +190,9 @@ r!changegame - *Change the game Rama is playing*""")
             ch="446268259721805825"
             channel=bot.get_channel(ch)
             args = message.content.split(" ")
-            await client.send_message(channel, "%s" % (" ".join(args[1:]))
-    
+            await client.send_message(channel, "%s" % (" ".join(args[1:])))    
+        else:
+            await client,send_message(message.channel, "No.")
 
 @client.event
 async def on_ready():
