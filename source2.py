@@ -187,8 +187,7 @@ r!changegame - *Change the game Rama is playing*""")
     
     if message.content.startswith('r!ghost'):
         if message.author.id == "227446010094288896":
-            ch="446268259721805825"
-            channel=bot.get_channel(ch)
+            channel=bot.get_channel("446268259721805825")
             args = message.content.split(" ")
             await client.send_message(channel, "%s" % (" ".join(args[1:])))    
         else:
