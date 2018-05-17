@@ -73,6 +73,7 @@ async def on_message(message):
         summonlist=[]
         fulllist="--------------\n"
         summon=""
+        foursummon=""
 
         CEthree=["Mooncell Automaton","Runestone","Anchors Aweigh","Demon Boar","Clock Tower","Ryudoji Temple","Mana Gauge","Elixir of Love","Storch Ritter","Hermitage","Motored Cuirassier","Stuffed Lion","Lugh's Halo","Beast of Billows","Self Geas Scroll"]
         CEfour=["Iron-Willed Training","Primeval Curse","Projection","Gandr","Verdant Sound of Destruction","Gem Magecraft: Antumbra","Be Elegant","The Imaginary Element","Divine Banquet","Angel's Song","Seal Designation Enforcer","Holy Shroud of Magdalene","With One Strike","Code Cast","Knight's Dignity","Necromancy","Awakened Will","Golden Millennium Tree","Record Holder","Art of the Poisonous Snake","Art of Death","Gentle Affection","Innocent Maiden"]
@@ -89,7 +90,7 @@ async def on_message(message):
                 summon+=random.choice(CEfour)
             else:
                 foursummon="**4✰**: "
-                summon+=random.choice(SERVfour)
+                foursummon+=random.choice(SERVfour)
             foursummon+="\n"
             summonlist.append(foursummon)
         
