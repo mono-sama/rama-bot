@@ -55,15 +55,9 @@ async def on_message(message):
             await client.send_message(message.channel, embed = e)
 
         elif choice==2:
-            await client.send_message(message.channel, "Mono..? She's a crafty piece of work...")
-            e = discord.Embed()
-            e.set_image(url="https://cdn.discordapp.com/attachments/435494001710333952/439521636803280896/cunning.png")
-            await client.send_message(message.channel, embed = e)
-
-        elif choice==3:
             await client.send_message(message.channel, "I don't think she's around right now. Wanna leave a message?")
 
-        elif choice==4:
+        elif choice==3:
             await client.send_message(message.channel, "Um... She's over there.")
             e = discord.Embed()
             e.set_image(url="https://cdn.discordapp.com/attachments/439040144914251776/439889095246872607/suspicious.png")
@@ -77,12 +71,10 @@ async def on_message(message):
             await client.send_message(message.channel, response.geturl())
 
     if message.content.startswith("r!changegame"):
-        
         if message.author.id == "227446010094288896" or "414626125889667072" in [role.id for role in message.author.roles]:
             args = message.content.split(" ")
             await client.send_message(message.channel, "A new game...? Very well.")
-            await client.change_status(game=discord.Game(name="%s" % (" ".join(args[1:]))))
-            
+            await client.change_presence(game=discord.Game(name="%s" % (" ".join(args[1:]))))
         else:
             await client.send_message(message.channel, "You don't have permission to do that!")
             
