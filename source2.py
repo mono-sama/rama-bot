@@ -82,49 +82,52 @@ async def on_message(message):
         SERVfour=["Altria Pendragon (Alter)","Nero Claudius","Siegfried","Rama","Chevalier d'Eon","Emiya","Atalante","Elizabeth Báthory","Fionn mac Cumhaill","Li Shuwen","Astolfo","Anne Bonny & Mary Read","Marie Antoinette","Martha","Nursery Rhyme","Medea (Lily)","Helena Blavatsky","Thomas Edison","Stheno","Emiya (Assassin)","Carmilla","Heracles","Lancelot","Frankenstein","Beowulf","Tamamo Cat"]
         SERVfive=["Altria Pendragon","Mordred","Altera","Orion","Nikola Tesla","Arjuna","Karna","Francis Drake","Queen Medb","Tamamo-no-Mae","Zhuge Liang (Lord El-Melloi II)","Jack the Ripper","Vlad III","Florence Nightingale","Cú Chulainn (Alter)","Jeanne d'Arc"]
 
-        if option==10:
-            option-=1
-            fourchance=random.randint(1,100)
-            if fourchance<=80:
-                foursummon="4✰ CE: "
-                foursummon+=random.choice(CEfour)
-            else:
-                foursummon="**4✰**: "
-                foursummon+=random.choice(SERVfour)
-            foursummon+="\n"
-            summonlist.append(foursummon)
-        
-        for i in range(0,option):
-            chance=random.randint(1,100)
-            if chance<=40:
-                summon="3✰ CE: "
-                summon+=random.choice(CEthree)
-            elif chance<=80 and chance>40:
-                summon="**3✰**: "
-                summon+=random.choice(SERVthree)
-            elif chance<=92 and chance>80:
-                summon="4✰ CE: "
-                summon+=random.choice(CEfour)
-            elif chance<=95 and chance>92:
-                summon="**4✰**: "
-                summon+=random.choice(SERVfour)
-            elif chance<=99 and chance>95:
-                summon="5✰ CE: "
-                summon+=random.choice(CEfive)
-            elif chance==100:
-                summon="**5✰**: "
-                summon+=random.choice(SERVfive)
-            summon+="\n"
-            summonlist.append(summon)
+        if option>10:
+            await client.send_message(message.channel, "You can only summon up to 10 times! Don't be greedy!")
+        else:
+            if option==10:
+                option-=1
+                fourchance=random.randint(1,100)
+                if fourchance<=80:
+                    foursummon="4✰ CE: "
+                    foursummon+=random.choice(CEfour)
+                else:
+                    foursummon="**4✰**: "
+                    foursummon+=random.choice(SERVfour)
+                foursummon+="\n"
+                summonlist.append(foursummon)
 
-        for x in summonlist:
-            fulllist+=x
-        fulllist+="--------------"
-        
-        msg = "{0.author.mention}".format(message)
-        e = discord.Embed()
-        e.add_field(name="Summoning Results:", value=fulllist, inline=False)
-        await client.send_message(message.channel, msg, embed = e)
+            for i in range(0,option):
+                chance=random.randint(1,100)
+                if chance<=40:
+                    summon="3✰ CE: "
+                    summon+=random.choice(CEthree)
+                elif chance<=80 and chance>40:
+                    summon="**3✰**: "
+                    summon+=random.choice(SERVthree)
+                elif chance<=92 and chance>80:
+                    summon="4✰ CE: "
+                    summon+=random.choice(CEfour)
+                elif chance<=95 and chance>92:
+                    summon="**4✰**: "
+                    summon+=random.choice(SERVfour)
+                elif chance<=99 and chance>95:
+                    summon="5✰ CE: "
+                    summon+=random.choice(CEfive)
+                elif chance==100:
+                    summon="**5✰**: "
+                    summon+=random.choice(SERVfive)
+                summon+="\n"
+                summonlist.append(summon)
+
+            for x in summonlist:
+                fulllist+=x
+            fulllist+="--------------"
+
+            msg = "{0.author.mention}".format(message)
+            e = discord.Embed()
+            e.add_field(name="Summoning Results:", value=fulllist, inline=False)
+            await client.send_message(message.channel, msg, embed = e)
 
     
     if message.content.startswith("r!randomfgo"):
