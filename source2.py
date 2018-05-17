@@ -120,10 +120,11 @@ async def on_message(message):
         for x in summonlist:
             fulllist+=x
         fulllist+="--------------"
-
+        
+        msg = "{0.author.mention}".format(message)
         e = discord.Embed()
         e.add_field(name="Summoning Results:", value=fulllist, inline=False)
-        await client.send_message(message.channel, embed = e)
+        await client.send_message(message.channel, msg, embed = e)
 
     
     if message.content.startswith("r!randomfgo"):
