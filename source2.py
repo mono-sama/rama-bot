@@ -101,8 +101,8 @@ async def on_message(message):
             elif chance==100:
                 summon="**5✰**: "
                 summon+=random.choice(SERVfive)
-        summon+="\n"
-        summonlist.append(summon)
+            summon+="\n"
+            summonlist.append(summon)
 
         for x in summonlist:
             fulllist+=x
