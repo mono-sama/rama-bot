@@ -81,6 +81,18 @@ async def on_message(message):
         SERVfour=["Altria Pendragon (Alter)","Nero Claudius","Siegfried","Rama","Chevalier d'Eon","Emiya","Atalante","Elizabeth Báthory","Fionn mac Cumhaill","Li Shuwen","Astolfo","Anne Bonny & Mary Read","Marie Antoinette","Martha","Nursery Rhyme","Medea (Lily)","Helena Blavatsky","Thomas Edison","Stheno","Emiya (Assassin)","Carmilla","Heracles","Lancelot","Frankenstein","Beowulf","Tamamo Cat"]
         SERVfive=["Altria Pendragon","Mordred","Altera","Orion","Nikola Tesla","Arjuna","Karna","Francis Drake","Queen Medb","Tamamo-no-Mae","Zhuge Liang (Lord El-Melloi II)","Jack the Ripper","Vlad III","Florence Nightingale","Cú Chulainn (Alter)","Jeanne d'Arc"]
 
+        if option==10:
+            option-=1
+            fourchance=random.randint(1,100)
+            if chance<=80:
+                foursummon="4✰ CE: "
+                summon+=random.choice(CEfour)
+            else:
+                foursummon="**4✰**: "
+                summon+=random.choice(SERVfour)
+            foursummon+="\n"
+            summonlist.append(foursummon)
+        
         for i in range(0,option):
             chance=random.randint(1,100)
             if chance<=40:
