@@ -69,6 +69,7 @@ async def on_message(message):
     if message.content.startswith("r!summon"):
         args = message.content.split(" ")
         option = " ".join(args[1:])
+        option=int(option)
         summonlist=[]
         fulllist=""
         
@@ -108,10 +109,6 @@ async def on_message(message):
         e = discord.Embed()
         e.add_field(name="Summoning Results:", value=fulllist, inline=False)
         await client.send_message(message.channel, embed = e)
-       
-          
-    
-    
     
     if message.content.startswith("r!randomfgo"):
             response = urllib.request.urlopen('http://fategrandorder.wikia.com/wiki/Special:Random')
