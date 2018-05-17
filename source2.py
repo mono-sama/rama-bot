@@ -37,7 +37,7 @@ async def on_message(message):
             await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
             await client.delete_message(message)
         else:
-            message.content.split
+            message.content.split(" ")
             await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
 
 
@@ -65,7 +65,16 @@ async def on_message(message):
 
     if message.content.startswith("r!ping"):
             await client.send_message(message.channel, "Pong!")
-
+    
+    if message.content.startswith("r!summon"):
+        args = message.content.split(" ")
+        option = " ".join(args[1:])
+        option = int(option)
+        if option==1:
+            await client.send_message(message.channel, "Ping!")
+        else:
+            await client.send_message(message.channel, "Pong!")
+        
     if message.content.startswith("r!randomfgo"):
             response = urllib.request.urlopen('http://fategrandorder.wikia.com/wiki/Special:Random')
             await client.send_message(message.channel, response.geturl())
