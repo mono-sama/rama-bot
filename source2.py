@@ -81,9 +81,15 @@ async def on_message(message):
         SERVthree=["Gaius Julius Caesar","Fergus mac Róich","Gilles de Rais","Robin Hood","David","Billy the Kid","Euryale","Gilgamesh (Child)","Cú Chulainn","Diarmuid Ua Duibhne","Cú Chulainn (Prototype)","Romulus","Hektor","Medusa","Boudica","Ushiwakamaru","Alexander","Medea","Gilles de Rais","Paracelsus von Hohenheim","Charles Babbage","Mephistopheles","Geronimo","Hassan of the Hundred Personas","Henry Jekyll & Hyde","Jing Ke","Lu Bu Fengxian","Darius III","Kiyohime"]
         SERVfour=["Altria Pendragon (Alter)","Nero Claudius","Siegfried","Rama","Chevalier d'Eon","Emiya","Atalante","Elizabeth Báthory","Fionn mac Cumhaill","Li Shuwen","Astolfo","Anne Bonny & Mary Read","Marie Antoinette","Martha","Nursery Rhyme","Medea (Lily)","Helena Blavatsky","Thomas Edison","Stheno","Emiya (Assassin)","Carmilla","Heracles","Lancelot","Frankenstein","Beowulf","Tamamo Cat"]
         SERVfive=["Altria Pendragon","Mordred","Altera","Orion","Nikola Tesla","Arjuna","Karna","Francis Drake","Queen Medb","Tamamo-no-Mae","Zhuge Liang (Lord El-Melloi II)","Jack the Ripper","Vlad III","Florence Nightingale","Cú Chulainn (Alter)","Jeanne d'Arc"]
-
+        
         if option>10:
             await client.send_message(message.channel, "You can only summon up to 10 times! Don't be greedy!")
+        
+        elif option==69:
+            e = discord.Embed()
+            e.set_image(url="https://cdn.discordapp.com/attachments/446268259721805825/446780412400762880/unknown-93.png")
+            await client.send_message(message.channel, embed = e)
+            
         else:
             if option==10:
                 option-=1
