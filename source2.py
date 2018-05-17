@@ -105,7 +105,7 @@ async def on_message(message):
         summonlist.append(summon)
 
         for x in summonlist:
-        fulllist+=x
+            fulllist+=x
         fulllist+="--------------"
 
         e = discord.Embed()
