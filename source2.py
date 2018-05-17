@@ -85,7 +85,7 @@ async def on_message(message):
         if option==10:
             option-=1
             fourchance=random.randint(1,100)
-            if chance<=80:
+            if fourchance<=80:
                 foursummon="4✰ CE: "
                 summon+=random.choice(CEfour)
             else:
