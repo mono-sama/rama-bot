@@ -69,12 +69,50 @@ async def on_message(message):
     if message.content.startswith("r!summon"):
         args = message.content.split(" ")
         option = " ".join(args[1:])
-        option = int(option)
-        if option==1:
-            await client.send_message(message.channel, "Ping!")
-        else:
-            await client.send_message(message.channel, "Pong!")
+        summonlist=[]
+        fulllist=""
         
+        CEthree=["Mooncell Automaton","Runestone","Anchors Aweigh","Demon Boar","Clock Tower","Ryudoji Temple","Mana Gauge","Elixir of Love","Storch Ritter","Hermitage","Motored Cuirassier","Stuffed Lion","Lugh's Halo","Beast of Billows","Self Geas Scroll"]
+        CEfour=["Iron-Willed Training","Primeval Curse","Projection","Gandr","Verdant Sound of Destruction","Gem Magecraft: Antumbra","Be Elegant","The Imaginary Element","Divine Banquet","Angel's Song","Seal Designation Enforcer","Holy Shroud of Magdalene","With One Strike","Code Cast","Knight's Dignity","Necromancy","Awakened Will","Golden Millennium Tree","Record Holder","Art of the Poisonous Snake","Art of Death","Gentle Affection","Innocent Maiden"]
+        CEfive=["Formal Craft","Imaginary Around","Limited/Zero Over","Kaleidoscope","Heaven's Feel","Prisma Cosmos","The Black Grail","Victor of the Moon","Another Ending","A Fragment of 2030","500 Year Obsession","Vessel of the Saint","Ideal Holy King","Volumen Hydrargyrum","Before Awakening"]
+        SERVthree=["Gaius Julius Caesar","Fergus mac Róich","Gilles de Rais","Robin Hood","David","Billy the Kid","Euryale","Gilgamesh (Child)","Cú Chulainn","Diarmuid Ua Duibhne","Cú Chulainn (Prototype)","Romulus","Hektor","Medusa","Boudica","Ushiwakamaru","Alexander","Medea","Gilles de Rais","Paracelsus von Hohenheim","Charles Babbage","Mephistopheles","Geronimo","Hassan of the Hundred Personas","Henry Jekyll & Hyde","Jing Ke","Lu Bu Fengxian","Darius III","Kiyohime"]
+        SERVfour=["Altria Pendragon (Alter)","Nero Claudius","Siegfried","Rama","Chevalier d'Eon","Emiya","Atalante","Elizabeth Báthory","Fionn mac Cumhaill","Li Shuwen","Astolfo","Anne Bonny & Mary Read","Marie Antoinette","Martha","Nursery Rhyme","Medea (Lily)","Helena Blavatsky","Thomas Edison","Stheno","Emiya (Assassin)","Carmilla","Heracles","Lancelot","Frankenstein","Beowulf","Tamamo Cat"]
+        SERVfive=["Altria Pendragon","Mordred","Altera","Orion","Nikola Tesla","Arjuna","Karna","Francis Drake","Queen Medb","Tamamo-no-Mae","Zhuge Liang (Lord El-Melloi II)","Jack the Ripper","Vlad III","Florence Nightingale","Cú Chulainn (Alter)","Jeanne d'Arc"]
+        
+        for i in range(1,option):
+            chance=random.randint(1,100)
+            if option<=40:
+                summon="3✰ CE: "
+                summon+=random.choice(CEthree)
+            elif option<=80 and option>40:
+                summon="**3✰**: "
+                summon+=random.choice(SERVthree)
+            elif option<=92 and option>80:
+                summon="4✰ CE: "
+                summon+=random.choice(CEfour)
+            elif option<=95 and option>92:
+                summon="**4✰**: "
+                summon+=random.choice(SERVfour)
+            elif option<=99 and option>95:
+                summon="5✰ CE: "
+                summon+=random.choice(CEfive)
+            elif option==100:
+                summon="**5✰**: "
+                summon+=random.choice(SERVfive)
+            summon+="\n"
+            summonlist.append(summon)
+            
+            for x in summonlist:
+                fulllist+=x
+        fulllist-="\n"
+        e = discord.Embed()
+        e.add_field(name="Summoning Results:", value=fulllist, inline=False)
+        await client.send_message(message.channel, embed = e)
+       
+          
+    
+    
+    
     if message.content.startswith("r!randomfgo"):
             response = urllib.request.urlopen('http://fategrandorder.wikia.com/wiki/Special:Random')
             await client.send_message(message.channel, response.geturl())
