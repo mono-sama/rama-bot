@@ -260,7 +260,17 @@ r!changegame - *Change the game Rama is playing*""")
         e = discord.Embed()
         e.set_image(url="https://cdn.discordapp.com/attachments/441831504604037122/441974102052306954/20180504_154700.png")
         await client.send_message(message.channel, lancelotfucksin, embed = e)
+        
 
+@client.event
+async def login_ping():
+    await client.wait_until_ready()
+    channel = discord.Object(id='446268259721805825')
+    while not client.is_closed:
+        now = datetime.datetime.now()
+        await client.send_message(channel, str(now))
+        await asyncio.sleep(60) # task runs every 60 seconds
+        
 @client.event
 async def on_ready():
     print("Servant, Saber. Great King of Kosala, Rama. It's alright, leave it all to me!")
