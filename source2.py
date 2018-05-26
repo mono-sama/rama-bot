@@ -268,7 +268,7 @@ async def login_ping():
     channel = discord.Object(id='446268259721805825')
     while not client.is_closed:
         now = datetime.datetime.now()
-        while now.hour==0 and now.minute==31 and now.second==0 and now.microsecond==0:
+        if now.hour==0 and now.minute==33 and now.second==0 and now.microsecond==0:
             await client.send_message(channel, "**Ding dong**... Good morning, everyone! It is currently 05:00, BST (British Summer Time). Your daily login bonuses have now reset; remember to collect them! Have a nice day!")
         
 @client.event
