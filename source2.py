@@ -275,5 +275,7 @@ async def login_ping():
 async def on_ready():
     print("Servant, Saber. Great King of Kosala, Rama. It's alright, leave it all to me!")
 
+    
+client.loop.create_task(login_ping())
 token=os.environ["BOT_TOKEN"]
 client.run(token)
