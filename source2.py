@@ -268,7 +268,7 @@ async def login_ping():
     channel = discord.Object(id='446268259721805825')
     while not client.is_closed:
         now = datetime.datetime.now()
-        if str(now.minute)="50":
+        if now.minute==55:
             await client.send_message(channel, "Ding dong bing bong.... Good evening Mono. It is now 50 minutes past. Good luck testing!")
         await asyncio.sleep(60) # task runs every 60 seconds
         
