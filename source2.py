@@ -262,20 +262,21 @@ r!changegame - *Change the game Rama is playing*""")
         await client.send_message(message.channel, lancelotfucksin, embed = e)
         
 
-#@client.event
-#async def login_ping():
-    #await client.wait_until_ready()
-    #channel = discord.Object(id='446268259721805825')
-    #while not client.is_closed:
-        #now = datetime.datetime.now()
-        #await client.send_message(channel, str(now))
-        #await asyncio.sleep(60) # task runs every 60 seconds
+@client.event
+async def login_ping():
+    await client.wait_until_ready()
+    channel = discord.Object(id='446268259721805825')
+    while not client.is_closed:
+        now = datetime.datetime.now()
+        if str(now.minute)="50":
+            await client.send_message(channel, "Ding dong bing bong.... Good evening Mono. It is now 50 minutes past. Good luck testing!")
+        await asyncio.sleep(60) # task runs every 60 seconds
         
 @client.event
 async def on_ready():
     print("Servant, Saber. Great King of Kosala, Rama. It's alright, leave it all to me!")
 
     
-#client.loop.create_task(login_ping())
+client.loop.create_task(login_ping())
 token=os.environ["BOT_TOKEN"]
 client.run(token)
