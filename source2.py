@@ -265,12 +265,11 @@ r!changegame - *Change the game Rama is playing*""")
 @client.event
 async def login_ping():
     await client.wait_until_ready()
-    channel = discord.Object(id='441190970403323914')
+    channel = discord.Object(id='446268259721805825')
     while not client.is_closed:
         now = datetime.datetime.now()
-        if now.hour==4 and now.minute==0:
+        while now.hour==0 and now.minute==31 and now.second==0 and now.microsecond==0:
             await client.send_message(channel, "**Ding dong**... Good morning, everyone! It is currently 05:00, BST (British Summer Time). Your daily login bonuses have now reset; remember to collect them! Have a nice day!")
-            await asyncio.sleep(70)
         
 @client.event
 async def on_ready():
