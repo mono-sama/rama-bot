@@ -35,13 +35,15 @@ async def on_message(message):
         await client.send_message(message.channel, "F :pensive: :pray:")
         
     if message.content.startswith("r!say"):
-        if message.author.id == "152321177564479488" or "222222150268878848":
-            await client.send_message(message.channel, "Blocked and reported.")
                                       
         if message.author.id == "227446010094288896":
             args = message.content.split(" ")
             await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
             await client.delete_message(message)
+            
+        elif message.author.id == "152321177564479488" or "222222150268878848":
+            await client.send_message(message.channel, "Blocked and reported.")
+        
         else:
             args = message.content.split(" ")
             await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
