@@ -34,6 +34,11 @@ async def on_message(message):
     if message.content.startswith("r!f"):
         await client.send_message(message.channel, "F :pensive: :pray:")
         
+    if message.content.startswith("r!bigf):
+        e = discord.Embed()
+        e.set_image(url="https://cdn.discordapp.com/attachments/441190970403323914/452694136555044864/F.gif")
+        await client.send_message(message.channel, embed = e)
+        
     if message.content.startswith("r!say"):                               
         if message.author.id == "227446010094288896":
             args = message.content.split(" ")
