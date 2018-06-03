@@ -41,9 +41,12 @@ async def on_message(message):
             await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
             await client.delete_message(message)
             
-        elif message.author.id == "152321177564479488" or "222222150268878848":
+        elif message.author.id == "152321177564479488":
             await client.send_message(message.channel, "Blocked and reported.")
         
+        elif message,author.id == "222222150268878848":
+            await client.send_message(message.channel, "Blocked and reported.")
+            
         else:
             args = message.content.split(" ")
             await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
