@@ -36,7 +36,7 @@ async def on_message(message):
         
     if message.content.startswith("r!say"):
         if message.author.id == "152321177564479488" or "222222150268878848":
-            await client.send_message(message.channel, "Blocked and reported."
+            await client.send_message(message.channel, "Blocked and reported.")
                                       
         if message.author.id == "227446010094288896":
             args = message.content.split(" ")
