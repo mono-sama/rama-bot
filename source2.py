@@ -281,7 +281,7 @@ r!changegame - *Change the game Rama is playing*""")
         x = ["227446010094288896","439038726232997898"]
         for person in x:
             disname=user.display_name(person)
-            await client.send_message(discord.Object(id='446268259721805825'), disname)
+            await client.send_message(discord.Object(id='446268259721805825'), str(disname))
                
 @client.event
 async def on_ready():
