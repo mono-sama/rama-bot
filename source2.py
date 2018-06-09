@@ -279,8 +279,7 @@ r!changegame - *Change the game Rama is playing*""")
         await client.send_message(message.channel, "Sending debug information to the test dungeon....")
         x = message.server.members
         for person in x:
-            user = person[:-5]
-            await client.send_message(discord.Object(id='446268259721805825'), user)
+            await client.send_message(discord.Object(id='446268259721805825'), str(person))
                
 @client.event
 async def on_ready():
