@@ -278,8 +278,8 @@ r!changegame - *Change the game Rama is playing*""")
     if message.content.startswith("r!members"):
         await client.send_message(message.channel, "Sending debug information to the test dungeon....")
         x = message.server.members
-        for member in x:
-            disname=user.display_name(member)
+        for person in x:
+            disname=member.nick(person)
             await client.send_message(discord.Object(id='446268259721805825'), disname)
                
 @client.event
