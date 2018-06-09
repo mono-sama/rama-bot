@@ -278,9 +278,9 @@ r!changegame - *Change the game Rama is playing*""")
     if message.content.startswith("r!members"):
         await client.send_message(message.channel, "Sending debug information to the test dungeon....")
         x = message.server.members
-        for member in x:
-            member = member[:-5]
-            await client.send_message(discord.Object(id='446268259721805825'), member)
+        for person in x:
+            user = person[:-5]
+            await client.send_message(discord.Object(id='446268259721805825'), user)
                
 @client.event
 async def on_ready():
