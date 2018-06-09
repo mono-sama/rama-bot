@@ -277,7 +277,7 @@ r!changegame - *Change the game Rama is playing*""")
         
     if message.content.startswith("r!members"):
         await client.send_message(message.channel, "Sending debug information to the test dungeon....")
-        x = message.server.members
+        x = ["196197321225142272","152321177564479488","170231958683516928","227446010094288896","362196249979518986","208017434374963200","220761134460829696","216761683010519040","193991173545656321","235779276404817920","222222150268878848","288761236429078530","289133057414529024","208013125029462016","170617269204942849","174320191402934273","113823154308251652","106945591187120128"]
         for person in x:
             disname=member.nick(person)
             await client.send_message(discord.Object(id='446268259721805825'), disname)
