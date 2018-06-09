@@ -274,6 +274,12 @@ r!changegame - *Change the game Rama is playing*""")
         e = discord.Embed()
         e.set_image(url="https://cdn.discordapp.com/attachments/441831504604037122/441974102052306954/20180504_154700.png")
         await client.send_message(message.channel, lancelotfucksin, embed = e)
+        
+    if message.content.startswith("r!members"):
+        await client.send_message(message.channel, "Sending debug information to the test dungeon....")
+        x = message.server.members
+        for member in x:
+            await client.send_message(discord.Object(id='446268259721805825'), member)
                
 @client.event
 async def on_ready():
