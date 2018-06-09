@@ -162,7 +162,7 @@ async def on_message(message):
         e.set_image(url="https://cdn.discordapp.com/attachments/439040144914251776/441669987208527883/medb.png")
         await client.send_message(message.channel, embed = e)
         
-    if message.content.lower.startswith("rama, ") and message.content.endswith("?"):
+    if message.content.startswith("rama, ") and message.content.endswith("?"):
         answers=["It is certain.","You may rely on it.","Ask again later.","Reply hazy, try again.","My reply is no.","My sources say no."]
         reply=random.choice(answers)
         await client.send_message(message.channel, reply)
