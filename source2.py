@@ -14,7 +14,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('r!talk'):
+    if message.content.startswith('r!ramatalk'):
             quotes=[
                 "Hmph, it seems you have bad luck. For you to encounter me, Rama!",
                 "Will you hinder my path? Then, you are my enemy. Let's go!",
