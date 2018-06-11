@@ -32,7 +32,7 @@ async def on_message(message):
         await client.send_message(message.channel, "Hello!")
         
         
-    if message.content.startswith("r!bigf"):
+    if message.content.startswith("r!respect"):
         e = discord.Embed()
         e.set_image(url="https://cdn.discordapp.com/attachments/441190970403323914/452694136555044864/F.gif")
         await client.send_message(message.channel, embed = e)
@@ -169,6 +169,7 @@ r!ping - *Pong! Tests if the bot is online.*
 r!8ball - *Get Rama's opinion on things.*
 
 **Fate/Bullshit**
+r!respect - *Pay respects with Caster Cu!*
 r!ramatalk - *Random Rama quote.*
 r!randomfgo - *Posts a random page from the F/GO wiki.*
 r!fatekin - *Get your fresh F/GO kins here!*
@@ -267,9 +268,6 @@ r!changegame - *Change the game Rama is playing*""")
         e = discord.Embed()
         e.set_image(url="https://cdn.discordapp.com/attachments/441831504604037122/441974102052306954/20180504_154700.png")
         await client.send_message(message.channel, lancelotfucksin, embed = e)
-        
-    if message.content.startswith("r!f"):
-        await client.send_message(message.channel, "F :pensive: :pray:")
         
     if message.content.startswith("r!members"):
         await client.send_message(message.channel, "Sending debug information to the test dungeon....")
