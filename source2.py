@@ -31,6 +31,12 @@ async def on_message(message):
     if message.content.startswith('r!hello'):
         await client.send_message(message.channel, "Hello!")
         
+    if message.content.startswith("r!invite"):
+        await client.send_message(message.channel, """
+Want to add me elsewhere? Sure thing!
+**Bot permissions only:** https://discordapp.com/api/oauth2/authorize?client_id=439038726232997898&permissions=0&scope=bot
+**+ Admin permissions:** https://discordapp.com/api/oauth2/authorize?client_id=439038726232997898&permissions=8&scope=bot
+""")
         
     if message.content.startswith("r!respect"):
         e = discord.Embed()
