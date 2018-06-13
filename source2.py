@@ -58,6 +58,13 @@ Want to add me elsewhere? Sure thing!
         e = discord.Embed()
         e.set_image(url="https://cdn.discordapp.com/attachments/435484833997783053/439044105264168960/unknown-61.png")
         await client.send_message(message.channel, embed = e)
+        
+        
+    if message.content.startswith("r!okada"):
+        e = discord.Embed()
+        msg="***RAT ALERT***"
+        e.set_image(url="https://cdn.discordapp.com/attachments/414700659884163073/456515388805611530/unknown-138.png")
+        await client.send_message(message.channel, msg, embed = e)
 
     if message.content.startswith("r!mono"):
         choice=random.randint(1,4)
