@@ -45,17 +45,12 @@ Want to add me elsewhere? Sure thing!
         
     if message.content.startswith("r!say"):
         if "yes" in (y.name.lower() for y in message.author.roles) or message.author.id == "227446010094288896":
-            #args = message.content.split(" ")
-            #await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
-            await client.send_message(message.channel, "H")
-        #if message.author.id == "227446010094288896":
-            #args = message.content.split(" ")
-            #await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
-            #await client.delete_message(message)
-            
-        else:
             args = message.content.split(" ")
             await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
+            if message.author.id == "227446010094288896":
+                await client.delete_message(message) 
+        else:
+            await client.send_message(message.channel, "Sorry! You're not allowed to do that.")
 
 
     if message.content.startswith("r!happy"):
@@ -190,16 +185,16 @@ r!ramatalk - *Random Rama quote.*
 r!randomfgo - *Posts a random page from the F/GO wiki.*
 r!fatekin - *Get your fresh F/GO kins here!*
 r!classes - *For when you can't be bothered to check up class advantages in game.*
-r!lancelot - *Lancelot fucks anywhere and everywhere.*
+r!lancelot - *Lancelot fucks.*
 r!birthday - *Happy Birthday!*
-r!nasty - *Are you nasty?*
+r!nasty - *Lancelot booty shorts in Rome.*
 r!5star - *Can't roll any 5-stars? Pretend you did!*
-r!summon [0-10] - *NA Summon Simulator! I'm not responsible for any disappointment caused.*
+r!summon [0-10] - *F/GO NA Summon Simulator! I'm not responsible for any disappointment caused.*
 **Dangan Ronpa: Goodbye Ramabot**
 *Coming soon!*
 **Command Spells**
 r!say - *Make Rama say something*
-r!changegame - *Change the game Rama is playing*""")
+r!changegame - *Change the game Rama is playing.*""")
 
     if message.content.startswith("r!aster"):
         goodbyes=["Goodbye.", "Sayonara.","Hmph, it seems you have bad luck. For you to encounter me, Rama!"]
