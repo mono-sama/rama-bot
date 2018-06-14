@@ -44,8 +44,9 @@ Want to add me elsewhere? Sure thing!
         await client.send_message(message.channel, embed = e)
         
     if message.content.startswith("r!say"):
-        if "yes" in (y.name.lower() for y in message.author.roles):
-            await client.send_message(message.channel, "H")
+        if "yes" in (y.name.lower() for y in message.author.roles) or if message.author.id == "227446010094288896":
+            args = message.content.split(" ")
+            await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
         #if message.author.id == "227446010094288896":
             #args = message.content.split(" ")
             #await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
