@@ -250,14 +250,20 @@ r!changegame - *Change the game Rama is playing.*""")
             await client.send_message(message.channel, msg + " Your Rama assigned kin is... %s" % kin)
         
     if message.content.startswith("r!birthday"):
-        e = discord.Embed()
-        e.set_image(url="https://cdn.discordapp.com/attachments/441190970403323914/441574720761233408/Cy_rRxlUcAAYiC5.png")
-        await client.send_message(message.channel, embed = e)
+        if "yes" in (y.name.lower() for y in message.author.roles) or message.author.id == "227446010094288896":
+            e = discord.Embed()
+            e.set_image(url="https://cdn.discordapp.com/attachments/441190970403323914/441574720761233408/Cy_rRxlUcAAYiC5.png")
+            await client.send_message(message.channel, embed = e)
+        else:
+            await client.send_message(message.channel, "Sorry! You're not allowed to do that. Blame Sera.")
              
     if message.content.startswith("r!nasty"):
-        e = discord.Embed()
-        e.set_image(url="https://cdn.discordapp.com/attachments/439040144914251776/441676875136237579/ARE_YOU_LANCELOT.png")
-        await client.send_message(message.channel, embed = e)
+        if "yes" in (y.name.lower() for y in message.author.roles) or message.author.id == "227446010094288896":
+            e = discord.Embed()
+            e.set_image(url="https://cdn.discordapp.com/attachments/439040144914251776/441676875136237579/ARE_YOU_LANCELOT.png")
+            await client.send_message(message.channel, embed = e)
+        else:
+            await client.send_message(message.channel, "Sorry! You're not allowed to do that. Blame Sera.")
         
     if message.content.startswith("r!5star"):
         ssrs=["http://fategrandorder.wikia.com/wiki/Shuten_Douji","http://fategrandorder.wikia.com/wiki/Minamoto_no_Yorimitsu","http://fategrandorder.wikia.com/wiki/Jeanne_d%27Arc_(Alter)","http://fategrandorder.wikia.com/wiki/Sc%C3%A1thach","http://fategrandorder.wikia.com/wiki/Sherlock_Holmes","http://fategrandorder.wikia.com/wiki/Artoria_Pendragon","http://fategrandorder.wikia.com/wiki/Jeanne_d%27Arc","http://fategrandorder.wikia.com/wiki/Sakata_Kintoki","http://fategrandorder.wikia.com/wiki/Merlin","http://fategrandorder.wikia.com/wiki/Gilgamesh","http://fategrandorder.wikia.com/wiki/Mordred","http://fategrandorder.wikia.com/wiki/Miyamoto_Musashi","http://fategrandorder.wikia.com/wiki/%22The_Old_Man_of_the_Mountain%22","http://fategrandorder.wikia.com/wiki/Artoria_Pendragon_(Lancer)","http://fategrandorder.wikia.com/wiki/Tamamo_no_Mae","http://fategrandorder.wikia.com/wiki/Achilles","http://fategrandorder.wikia.com/wiki/Zhuge_Liang_(Lord_El-Melloi_II)","http://fategrandorder.wikia.com/wiki/Cu_Chulainn_(Alter)","http://fategrandorder.wikia.com/wiki/Nightingale","http://fategrandorder.wikia.com/wiki/Ozymandias","http://fategrandorder.wikia.com/wiki/Anastasia_Nikolaevna_Romanova","http://fategrandorder.wikia.com/wiki/Arthur_Pendragon_(Prototype)","http://fategrandorder.wikia.com/wiki/Brynhildr","http://fategrandorder.wikia.com/wiki/Xuanzang","http://fategrandorder.wikia.com/wiki/Jack_the_Ripper","http://fategrandorder.wikia.com/wiki/Okita_Souji","http://fategrandorder.wikia.com/wiki/Katsushika_Hokusai","http://fategrandorder.wikia.com/wiki/Artoria_Pendragon_(Archer)","http://fategrandorder.wikia.com/wiki/Scheherazade","http://fategrandorder.wikia.com/wiki/Karna","http://fategrandorder.wikia.com/wiki/Sessyoin_Kiara","http://fategrandorder.wikia.com/wiki/Medb","http://fategrandorder.wikia.com/wiki/Artoria_Pendragon_(Rider_Alter)","http://fategrandorder.wikia.com/wiki/Attila","http://fategrandorder.wikia.com/wiki/Enkidu","http://fategrandorder.wikia.com/wiki/Tamamo_no_Mae_(Lancer)","http://fategrandorder.wikia.com/wiki/Orion","http://fategrandorder.wikia.com/wiki/Semiramis","http://fategrandorder.wikia.com/wiki/Mysterious_Heroine_X_(Alter)","http://fategrandorder.wikia.com/wiki/Illyasviel_von_Einzbern","http://fategrandorder.wikia.com/wiki/Ivan_the_Terrible","http://fategrandorder.wikia.com/wiki/Nero_Claudius_(Bride)","http://fategrandorder.wikia.com/wiki/Mysterious_Heroine_X","http://fategrandorder.wikia.com/wiki/Edmond_Dantes","http://fategrandorder.wikia.com/wiki/Osakabehime","http://fategrandorder.wikia.com/wiki/Iskandar","http://fategrandorder.wikia.com/wiki/Francis_Drake","http://fategrandorder.wikia.com/wiki/Amakusa_Shirou","http://fategrandorder.wikia.com/wiki/James_Moriarty","http://fategrandorder.wikia.com/wiki/Leonardo_Da_Vinci","http://fategrandorder.wikia.com/wiki/Arjuna","http://fategrandorder.wikia.com/wiki/Quetzalcoatl","http://fategrandorder.wikia.com/wiki/Nero_Claudius_(Caster)","http://fategrandorder.wikia.com/wiki/Vlad_III","http://fategrandorder.wikia.com/wiki/Meltlilith","http://fategrandorder.wikia.com/wiki/Cleopatra","http://fategrandorder.wikia.com/wiki/Ryougi_Shiki_(Saber)","http://fategrandorder.wikia.com/wiki/Hijikata_Toshizou","http://fategrandorder.wikia.com/wiki/Nikola_Tesla"]
@@ -271,12 +277,15 @@ r!changegame - *Change the game Rama is playing.*""")
         await client.send_message(message.channel, embed = e)
         
     if message.content.startswith("r!lancelot"):
-        locations=["FUYUKI","RYUUDOU TEMPLE","CARNIVAL PHANTASM","YOUR NIGHTMARES","GARDEN OF AVALON","HIS ARMOR", "SHINJUKU","MSPAINT","SNARK'S HOUSE","YOUR SUPPORT LIST","YOUR GACHA ROLLS","YOUR SAINT QUARTZ","DA VINCI'S SHOP","A RANDOM PARKING LOT IN JAPAN","A LAKE","BEHIND 7/11","F/GO SUPPORT GROUP","ORLEANS","ROME","OKEANOS","LONDON","AMERICA","CAMELOT","BABYLONIA","MEDB'S CARRIAGE","ACHILLES' CHARIOT","AN OLD SOCK","BOOTY SHORTS","OZYMANDIAS' LARGE TEMPLE COMPLEX, PRESENT IN HIS NOBLE PHANTASM, RAMESSEUM TENTYRIS, WHEREIN A LARGE NUMBER OF PHANTASMAL BEASTS DWELL INSIDE","GILGAMESH'S TREASURY","MOON CELL","THE FAR SIDE OF THE MOON","THE NEAR SIDE OF THE MOON","ARTURIA'S HOUSE","SEMIRAMIS' HANGING GARDENS OF BABYLON","CHALDEA'S BATHROOM","ISKANDAR'S IONIAN HETAIROI","INFINITY WAR","THE HOLY GRAIL'S INNER CONTENTS","THE GRAIL SAUCE","UNLIMITED BLADE WORKS","THE GRANDORDER SUBREDDIT","OFFICIAL FATE/GRAND ORDER DISCORD SERVER","A FATE MMD","MONTY PYTHON AND THE HOLY GRAIL","FATE/PROTOTYPE","FILTHYFATECONFESSIONS","A TRUCK","REDDIT","CUCKLAND","SHIROU'S KITCHEN","EINZBERN CASTLE","HOMUHARA ACADEMY","UNDER THE KNIGHT OF THE ROUND TABLE'S ROUND TABLE","THE OCEAN","THE EINZBERN CONSULTATION ROOM","DESPACITO"] 
-        fucksin=random.choice(locations)
-        lancelotfucksin="*LANCELOT FUCKS IN " + fucksin + "*"
-        e = discord.Embed()
-        e.set_image(url="https://cdn.discordapp.com/attachments/441831504604037122/441974102052306954/20180504_154700.png")
-        await client.send_message(message.channel, lancelotfucksin, embed = e)
+        if "yes" in (y.name.lower() for y in message.author.roles) or message.author.id == "227446010094288896":
+            locations=["FUYUKI","RYUUDOU TEMPLE","CARNIVAL PHANTASM","YOUR NIGHTMARES","GARDEN OF AVALON","HIS ARMOR", "SHINJUKU","MSPAINT","SNARK'S HOUSE","YOUR SUPPORT LIST","YOUR GACHA ROLLS","YOUR SAINT QUARTZ","DA VINCI'S SHOP","A RANDOM PARKING LOT IN JAPAN","A LAKE","BEHIND 7/11","F/GO SUPPORT GROUP","ORLEANS","ROME","OKEANOS","LONDON","AMERICA","CAMELOT","BABYLONIA","MEDB'S CARRIAGE","ACHILLES' CHARIOT","AN OLD SOCK","BOOTY SHORTS","OZYMANDIAS' LARGE TEMPLE COMPLEX, PRESENT IN HIS NOBLE PHANTASM, RAMESSEUM TENTYRIS, WHEREIN A LARGE NUMBER OF PHANTASMAL BEASTS DWELL INSIDE","GILGAMESH'S TREASURY","MOON CELL","THE FAR SIDE OF THE MOON","THE NEAR SIDE OF THE MOON","ARTURIA'S HOUSE","SEMIRAMIS' HANGING GARDENS OF BABYLON","CHALDEA'S BATHROOM","ISKANDAR'S IONIAN HETAIROI","INFINITY WAR","THE HOLY GRAIL'S INNER CONTENTS","THE GRAIL SAUCE","UNLIMITED BLADE WORKS","THE GRANDORDER SUBREDDIT","OFFICIAL FATE/GRAND ORDER DISCORD SERVER","A FATE MMD","MONTY PYTHON AND THE HOLY GRAIL","FATE/PROTOTYPE","FILTHYFATECONFESSIONS","A TRUCK","REDDIT","CUCKLAND","SHIROU'S KITCHEN","EINZBERN CASTLE","HOMUHARA ACADEMY","UNDER THE KNIGHT OF THE ROUND TABLE'S ROUND TABLE","THE OCEAN","THE EINZBERN CONSULTATION ROOM","DESPACITO"] 
+            fucksin=random.choice(locations)
+            lancelotfucksin="*LANCELOT FUCKS IN " + fucksin + "*"
+            e = discord.Embed()
+            e.set_image(url="https://cdn.discordapp.com/attachments/441831504604037122/441974102052306954/20180504_154700.png")
+            await client.send_message(message.channel, lancelotfucksin, embed = e)
+         else:
+            await client.send_message(message.channel, "Sorry! You're not allowed to do that. Blame Sera.")
         
     if message.content.startswith("r!members"):
         await client.send_message(message.channel, "Sending debug information to the test dungeon....")
