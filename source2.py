@@ -44,13 +44,12 @@ Want to add me elsewhere? Sure thing!
         await client.send_message(message.channel, embed = e)
         
     if message.content.startswith("r!say"):
-        server=client.get_server("441831504604037120")
-        if message.server == server:
+        if "yes" in [y.name.lower() for y in message.author.roles]:
             await client.send_message(message.channel, "H")
-        if message.author.id == "227446010094288896":
-            args = message.content.split(" ")
-            await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
-            await client.delete_message(message)
+        #if message.author.id == "227446010094288896":
+            #args = message.content.split(" ")
+            #await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
+            #await client.delete_message(message)
             
         else:
             args = message.content.split(" ")
