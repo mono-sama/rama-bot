@@ -43,6 +43,11 @@ Want to add me elsewhere? Sure thing!
         e.set_image(url="https://cdn.discordapp.com/attachments/441190970403323914/452694136555044864/F.gif")
         await client.send_message(message.channel, embed = e)
         
+    if message.content.startswith("r!avatar"):
+        if (message.mentions.__len__()>0):
+            for user in message.mentions:
+                print(user.avatar_url)
+        
     if message.content.startswith("r!say"):
         if "yes" in (y.name.lower() for y in message.author.roles) or message.author.id == "227446010094288896":
             args = message.content.split(" ")
