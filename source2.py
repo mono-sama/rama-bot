@@ -181,11 +181,13 @@ Want to add me elsewhere? Sure thing!
 
     
     if message.content.startswith("r!help"):
-        await client.send_message(message.channel, """
+        if "yes" in (y.name.lower() for y in message.author.roles):
+            await client.send_message(message.channel, """
 **General Commands**
 r!hello - *Say hello!*
 r!ping - *Pong! Tests if the bot is online.*
 r!8ball - *Get Rama's opinion on things.*
+r!avatar - *Snatch someone's avatar!*
 **Fate/Bullshit**
 r!respect - *Pay respects with Caster Cu!*
 r!ramatalk - *Random Rama quote.*
@@ -202,7 +204,27 @@ r!summon [0-10] - *F/GO NA Summon Simulator! I'm not responsible for any disappo
 **Command Spells**
 r!say - *Make Rama say something*
 r!changegame - *Change the game Rama is playing.*""")
-
+        else:
+            await client.send_message(message.channel, """
+**General Commands**
+r!hello - *Say hello!*
+r!ping - *Pong! Tests if the bot is online.*
+r!8ball - *Get Rama's opinion on things.*
+r!avatar - *Snatch someone's avatar!*
+**Fate/Bullshit**
+r!respect - *Pay respects with Caster Cu!*
+r!ramatalk - *Random Rama quote.*
+r!randomfgo - *Posts a random page from the F/GO wiki.*
+r!fatekin - *Get your fresh F/GO kins here!*
+r!classes - *For when you can't be bothered to check up class advantages in game.*
+r!5star - *Can't roll any 5-stars? Pretend you did!*
+r!summon [0-10] - *F/GO NA Summon Simulator! I'm not responsible for any disappointment caused.*
+**Dangan Ronpa: Goodbye Ramabot**
+*Coming soon!*
+**Command Spells**
+r!say - *Make Rama say something*
+r!changegame - *Change the game Rama is playing.*""")
+            
     if message.content.startswith("r!aster"):
         goodbyes=["Goodbye.", "Sayonara.","Hmph, it seems you have bad luck. For you to encounter me, Rama!"]
         choice=random.choice(goodbyes)
