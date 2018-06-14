@@ -43,11 +43,13 @@ Want to add me elsewhere? Sure thing!
         e.set_image(url="https://cdn.discordapp.com/attachments/441190970403323914/452694136555044864/F.gif")
         await client.send_message(message.channel, embed = e)
         
-    if message.content.startswith("r!say"):                               
-        if message.author.id == "227446010094288896":
-            args = message.content.split(" ")
-            await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
-            await client.delete_message(message)
+    if message.content.startswith("r!say"):
+        if "yes" in (y.name.lower() for y in message.author.roles):
+            await client.send_message(message.channel, "H")
+        #if message.author.id == "227446010094288896":
+            #args = message.content.split(" ")
+            #await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
+            #await client.delete_message(message)
             
         else:
             args = message.content.split(" ")
