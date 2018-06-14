@@ -32,7 +32,7 @@ async def on_message(message):
         await client.send_message(message.channel, "Hello!")
         
     if message.content.startswith("r!invite"):
-        await client.send_message(message.channel, """
+        await client.send_discord.Object(id='446268259721805825')message(message.channel, """
 Want to add me elsewhere? Sure thing!
 **Bot permissions only:** https://discordapp.com/api/oauth2/authorize?client_id=439038726232997898&permissions=0&scope=bot
 **+ Admin permissions:** https://discordapp.com/api/oauth2/authorize?client_id=439038726232997898&permissions=8&scope=bot
@@ -43,7 +43,10 @@ Want to add me elsewhere? Sure thing!
         e.set_image(url="https://cdn.discordapp.com/attachments/441190970403323914/452694136555044864/F.gif")
         await client.send_message(message.channel, embed = e)
         
-    if message.content.startswith("r!say"):                               
+    if message.content.startswith("r!say"):
+        server=discord.Object(id='441831504604037120')
+        if message.server.id == server:
+            await client.send_message(message.channel, "H")
         if message.author.id == "227446010094288896":
             args = message.content.split(" ")
             await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
