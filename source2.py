@@ -44,7 +44,7 @@ Want to add me elsewhere? Sure thing!
         await client.send_message(message.channel, embed = e)
         
     if message.content.startswith("r!say"):
-        server=discord.Object(id='441831504604037120')
+        server="441831504604037120"
         if message.server.id == server:
             await client.send_message(message.channel, "H")
         if message.author.id == "227446010094288896":
