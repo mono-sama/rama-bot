@@ -32,7 +32,7 @@ async def on_message(message):
         await client.send_message(message.channel, "Hello!")
         
     if message.content.startswith("r!invite"):
-        await client.send_discord.Object(id='446268259721805825')message(message.channel, """
+        await client.send_message(message.channel, """
 Want to add me elsewhere? Sure thing!
 **Bot permissions only:** https://discordapp.com/api/oauth2/authorize?client_id=439038726232997898&permissions=0&scope=bot
 **+ Admin permissions:** https://discordapp.com/api/oauth2/authorize?client_id=439038726232997898&permissions=8&scope=bot
@@ -43,13 +43,11 @@ Want to add me elsewhere? Sure thing!
         e.set_image(url="https://cdn.discordapp.com/attachments/441190970403323914/452694136555044864/F.gif")
         await client.send_message(message.channel, embed = e)
         
-    if message.content.startswith("r!say"):
-        if "yes" in (y.name.lower() for y in message.author.roles):
-            await client.send_message(message.channel, "H")
-        #if message.author.id == "227446010094288896":
-            #args = message.content.split(" ")
-            #await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
-            #await client.delete_message(message)
+    if message.content.startswith("r!say"):                               
+        if message.author.id == "227446010094288896":
+            args = message.content.split(" ")
+            await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
+            await client.delete_message(message)
             
         else:
             args = message.content.split(" ")
@@ -182,7 +180,6 @@ Want to add me elsewhere? Sure thing!
 r!hello - *Say hello!*
 r!ping - *Pong! Tests if the bot is online.*
 r!8ball - *Get Rama's opinion on things.*
-
 **Fate/Bullshit**
 r!respect - *Pay respects with Caster Cu!*
 r!ramatalk - *Random Rama quote.*
@@ -194,10 +191,8 @@ r!birthday - *Happy Birthday!*
 r!nasty - *Are you nasty?*
 r!5star - *Can't roll any 5-stars? Pretend you did!*
 r!summon [0-10] - *NA Summon Simulator! I'm not responsible for any disappointment caused.*
-
 **Dangan Ronpa: Goodbye Ramabot**
 *Coming soon!*
-
 **Command Spells**
 r!say - *Make Rama say something*
 r!changegame - *Change the game Rama is playing*""")
