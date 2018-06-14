@@ -45,7 +45,10 @@ Want to add me elsewhere? Sure thing!
         
     if message.content.startswith("r!avatar"):
         for user in message.mentions:
-            print(user.avatar_url)
+            avatarurl=user.avatar_url
+            e = discord.Embed()
+            e.set_image(url=avatarurl)
+            await client.send_message(message.channel, embed = e)
         
     if message.content.startswith("r!say"):
         if "yes" in (y.name.lower() for y in message.author.roles) or message.author.id == "227446010094288896":
