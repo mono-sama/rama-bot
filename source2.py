@@ -178,6 +178,10 @@ Want to add me elsewhere? Sure thing!
         answers=["It is certain.","You may rely on it.","Ask again later.","Reply hazy, try again.","My reply is no.","My sources say no."]
         reply=random.choice(answers)
         await client.send_message(message.channel, reply)
+        
+    if "rama play despacito" in message.content:
+        reply="https://www.youtube.com/watch?v=kJQP7kiw5Fk"
+        await client.send_message(message.channel, reply)
 
     
     if message.content.startswith("r!help"):
