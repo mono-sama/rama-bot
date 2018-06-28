@@ -180,9 +180,11 @@ Want to add me elsewhere? Sure thing!
         await client.send_message(message.channel, reply)
         
     if "rama play despacito" in message.content:
-        reply="https://www.youtube.com/watch?v=kJQP7kiw5Fk"
-        await client.send_message(message.channel, reply)
-
+        if message.author.id == "227446010094288896":
+            reply="https://www.youtube.com/watch?v=kJQP7kiw5Fk"
+            await client.send_message(message.channel, reply)
+        else:
+            await client.send_message(message.channel, "No.")
     
     if message.content.startswith("r!help"):
         if "yes" in (y.name.lower() for y in message.author.roles):
