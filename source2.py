@@ -306,9 +306,9 @@ r!changegame - *Change the game Rama is playing.*""")
     if message.content.startswith("r!roll"):
         args = message.content.split(" ")
         number="%s" % (" ".join(args[1:]))
-        chosenroll=random.randint(1,number)
-        #msg = "{0.author.mention}".format(message)
-        #await client.send_message(message.channel, msg + " You rolled a **" + chosenroll + "**!")
+        chosenroll=random.randint(1,int(number))
+        msg = "{0.author.mention}".format(message)
+        await client.send_message(message.channel, msg + " You rolled a **" + chosenroll + "**!")
         await client.send_message(message.channel, chosenroll)
         
                
