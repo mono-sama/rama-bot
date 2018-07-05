@@ -308,9 +308,10 @@ r!changegame - *Change the game Rama is playing.*""")
         number=" ".join(args[1:])
         number=int(number)
         chosenroll=random.randint(1,number)
+        chosenroll=str(chosenroll)
         msg = "{0.author.mention}".format(message)
-        #await client.send_message(message.channel, msg + " You rolled a **" + chosenroll + "**!")
-        await client.send_message(message.channel, chosenroll)
+        full=msg+" You rolled a **" + chosenroll + "**!"
+        await client.send_message(message.channel, full)
         
                
 @client.event
