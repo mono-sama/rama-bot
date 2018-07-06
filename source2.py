@@ -179,8 +179,16 @@ Want to add me elsewhere? Sure thing!
         reply=random.choice(answers)
         await client.send_message(message.channel, reply)
         
-    if "rama play despacito" in message.content:
+    if "rama play despacito" in message.content.lower():
         reply="https://www.youtube.com/watch?v=kJQP7kiw5Fk"
+        await client.send_message(message.channel, reply)
+        
+    if "mozart play despacito" in message.content.lower():
+        reply="https://www.youtube.com/watch?v=GmtTDvNcXcU"
+        await client.send_message(message.channel, reply)
+        
+    if "tristan play despacito" in message.content.lower():
+        reply="https://youtu.be/1yuOLpNlD8c?t=13"
         await client.send_message(message.channel, reply)
     
     if message.content.startswith("r!help"):
