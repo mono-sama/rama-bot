@@ -191,6 +191,16 @@ Want to add me elsewhere? Sure thing!
         reply="https://youtu.be/1yuOLpNlD8c?t=13"
         await client.send_message(message.channel, reply)
     
+    
+    if "goodnight" in message.content.lower():
+        if message.author.id == "227446010094288896":
+            await client.send_message(message.channel,"i locked the door so raikou doesn't get in to suffocate you. good luck, master.")
+        else:
+            await client.send_message(message.channel,"Goodnight. Dream of the quartz you'll never have.")
+        
+        
+        
+        
     if message.content.startswith("r!help"):
         await client.send_message(message.channel, """
 **General Commands**
