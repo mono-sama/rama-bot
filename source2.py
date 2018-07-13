@@ -195,8 +195,10 @@ Want to add me elsewhere? Sure thing!
     if "goodnight" in message.content.lower():
         if message.author.id == "227446010094288896":
             await client.send_message(message.channel,"Goodnight. Dream of the quartz you'll never have.")
-        
-        
+            
+    if message.content.startswith("r!ghost"):
+        args = message.content.split(" ")
+        await client.send_message(discord.Object(id='414625413915082752'), "%s" % (" ".join(args[1:])))
         
         
     if message.content.startswith("r!help"):
