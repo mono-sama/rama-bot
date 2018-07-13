@@ -198,7 +198,7 @@ Want to add me elsewhere? Sure thing!
             
     if message.content.startswith("r!ghost"):
         args = message.content.split(" ")
-        await client.send_message(discord.Object(id='446268259721805825'), "%s" % (" ".join(args[1:])))
+        await client.send_message(discord.Object(id='414625413915082754'), "%s" % (" ".join(args[1:])))
         
         
     if message.content.startswith("r!help"):
