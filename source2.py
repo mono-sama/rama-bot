@@ -190,16 +190,7 @@ Want to add me elsewhere? Sure thing!
     if "tristan play despacito" in message.content.lower():
         reply="https://youtu.be/1yuOLpNlD8c?t=13"
         await client.send_message(message.channel, reply)
-        
-    if "rabies" in message.content.lower():
-        for x in client.get_all_emojis():
-         emoji = get(bot.get_all_emojis(), name='rabies')
-            return await client.add_reaction(message, emoji)
-    
-    
-    if "goodnight" in message.content.lower():
-        if message.author.id == "227446010094288896":
-            await client.send_message(message.channel,"Goodnight. Dream of the quartz you'll never have.")
+
             
     if message.content.startswith("r!ghost"):
         args = message.content.split(" ")
