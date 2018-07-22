@@ -190,6 +190,11 @@ Want to add me elsewhere? Sure thing!
     if "tristan play despacito" in message.content.lower():
         reply="https://youtu.be/1yuOLpNlD8c?t=13"
         await client.send_message(message.channel, reply)
+        
+    if "rabies" in message.content.lower():
+        for x in client.get_all_emojis():
+        if x.id == '470662165422931971':
+            return await client.add_reaction(message, x)
     
     
     if "goodnight" in message.content.lower():
