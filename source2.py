@@ -193,8 +193,8 @@ Want to add me elsewhere? Sure thing!
         
     if "rabies" in message.content.lower():
         for x in client.get_all_emojis():
-        if x.id == '470662165422931971':
-            return await client.add_reaction(message, x)
+         emoji = get(bot.get_all_emojis(), name='rabies')
+            return await client.add_reaction(message, emoji)
     
     
     if "goodnight" in message.content.lower():
