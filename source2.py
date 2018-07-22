@@ -66,6 +66,12 @@ Want to add me elsewhere? Sure thing!
         await client.send_message(message.channel, embed = e)
         
         
+    
+    if message.content.startswith("r!ramacake"):
+        e = discord.Embed()
+        e.set_image(url="https://cdn.discordapp.com/attachments/470680030951768064/470681235958530049/2018-07-22_12-07-21.png")
+        await client.send_message(message.channel, embed = e)
+        
     if message.content.startswith("r!okada"):
         e = discord.Embed()
         msg="***RAT ALERT***"
