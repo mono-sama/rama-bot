@@ -90,7 +90,7 @@ Want to add me elsewhere? Sure thing!
         SERVfive=["Artoria Pendragon","Mordred","Altera","Orion","Nikola Tesla","Arjuna","Karna","Francis Drake","Queen Medb","Tamamo-no-Mae","Zhuge Liang (Lord El-Melloi II)","Jack the Ripper","Vlad III","Florence Nightingale","Cú Chulainn (Alter)","Jeanne d'Arc","Xuanzang Sanzang","Artoria Pendragon (Lancer)","Ozymandias"]
         
         
-        elif option>10:
+        if option>10:
             await client.send_message(message.channel, "You can only summon up to 10 times! Don't be greedy!")
  
         else:
@@ -286,7 +286,7 @@ r!changegame - *Give Romani a new game!*""")
                
 @client.event
 async def on_ready():
-    print()
+    print("Ready!")
 
 token=os.environ["BOT_TOKEN"]
 client.run(token)
