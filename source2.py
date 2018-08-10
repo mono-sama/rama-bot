@@ -13,13 +13,7 @@ client = discord.Client()
 async def on_message(message):
     if message.author == client.user:
         return
-
-    #if message.content.startswith('r!ramatalk'):
-            #quotes=[]
-                
-            #quote=random.choice(quotes)
-            #await client.send_message(message.channel, quote)
-
+    
     if message.content.startswith('r!hello'):
         await client.send_message(message.channel, "Hello!")
         
@@ -49,15 +43,7 @@ Want to add me elsewhere? Sure thing!
             if message.author.id == "227446010094288896":
                 await client.delete_message(message) 
         else:
-            await client.send_message(message.channel, "Hey! I can't let you do that!!")
-
-
-    if message.content.startswith("r!happy"):
-        e = discord.Embed()
-        e.set_image(url="https://cdn.discordapp.com/attachments/435484833997783053/439044105264168960/unknown-61.png")
-        await client.send_message(message.channel, embed = e)
-        
-        
+            await client.send_message(message.channel, "Hey! I can't let you do that!!")      
     
     if message.content.startswith("r!ramacake"):
         e = discord.Embed()
@@ -88,7 +74,6 @@ Want to add me elsewhere? Sure thing!
         SERVthree=["Gaius Julius Caesar","Fergus mac Róich","Gilles de Rais","Robin Hood","David","Billy the Kid","Euryale","Gilgamesh (Child)","Cú Chulainn","Diarmuid Ua Duibhne","Cú Chulainn (Prototype)","Romulus","Hektor","Medusa","Boudica","Ushiwakamaru","Alexander","Medea","Gilles de Rais","Paracelsus von Hohenheim","Charles Babbage","Mephistopheles","Geronimo","Hassan of the Hundred Personas","Henry Jekyll & Hyde","Jing Ke","Lu Bu Fengxian","Darius III","Kiyohime","Bedivere","Fuuma Kotarou"]
         SERVfour=["Artoria Pendragon (Alter)","Nero Claudius","Siegfried","Rama","Chevalier d'Eon","Emiya","Atalante","Elizabeth Báthory","Fionn mac Cumhaill","Li Shuwen","Astolfo","Anne Bonny & Mary Read","Marie Antoinette","Martha","Nursery Rhyme","Medea (Lily)","Helena Blavatsky","Thomas Edison","Stheno","Emiya (Assassin)","Carmilla","Heracles","Lancelot","Frankenstein","Beowulf","Tamamo Cat","Gawain","Lancelot (Saber)","Tristan","Artoria Pendragon (Alter) (Lancer)","Nitocris","Ibaraki-Douji"]
         SERVfive=["Artoria Pendragon","Mordred","Altera","Orion","Nikola Tesla","Arjuna","Karna","Francis Drake","Queen Medb","Tamamo-no-Mae","Zhuge Liang (Lord El-Melloi II)","Jack the Ripper","Vlad III","Florence Nightingale","Cú Chulainn (Alter)","Jeanne d'Arc","Xuanzang Sanzang","Artoria Pendragon (Lancer)","Ozymandias"]
-        
         
         if option>10:
             await client.send_message(message.channel, "You can only summon up to 10 times! Don't be greedy!")
