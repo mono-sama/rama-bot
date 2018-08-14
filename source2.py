@@ -141,7 +141,7 @@ Want to add me elsewhere? Sure thing!
         reply=random.choice(answers)
         await client.send_message(message.channel, reply)
         
-    if "rama play despacito" in message.content.lower():
+    if "doctor play despacito" in message.content.lower():
         reply="https://www.youtube.com/watch?v=kJQP7kiw5Fk"
         await client.send_message(message.channel, reply)
         
@@ -257,6 +257,17 @@ r!changegame - *Give Romani a new game!*""")
             person=person[:-5]
             await client.send_message(discord.Object(id='446268259721805825'), person)
             
+    if message.content.startswith("r!datetime"):
+        year = "Current year: "+ datetime.date.today().strftime("%Y") + "\n"
+        month = "Month of year: "+ datetime.date.today().strftime("%B") + "\n"
+        week_number = "Week number of the year: "+ datetime.date.today().strftime("%W") + "\n"
+        weekday = "Weekday of the week: "+ datetime.date.today().strftime("%w") + "\n"
+        dayyear = "Day of year: "+ datetime.date.today().strftime("%j") + "\n"
+        daymonth = "Day of the month : "+ datetime.date.today().strftime("%d") + "\n"
+        dayweek = "Day of week: "+ datetime.date.today().strftime("%A") + "\n"
+        full = year + month + week_number + weekday + dayyear + daymonth + dayweek
+        await client.send_message(message.channel, full)
+        
             
     if message.content.startswith("r!roll"):
         args = message.content.split(" ")
