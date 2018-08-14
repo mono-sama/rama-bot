@@ -258,7 +258,7 @@ r!changegame - *Give Romani a new game!*""")
             await client.send_message(discord.Object(id='446268259721805825'), person)
             
     if message.content.startswith("r!datetime"):
-        fulldate=str(datetime.datetime.now())
+        fulldate=datetime.datetime.now()
         splittime = fulldate.split(" ")
         fulltime = "Current Time: " + splittime + "\n"
 
