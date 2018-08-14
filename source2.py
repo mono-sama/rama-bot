@@ -265,7 +265,7 @@ r!changegame - *Give Romani a new game!*""")
         dayyear = "Day of year: "+ datetime.date.today().strftime("%j") + "\n"
         daymonth = "Day of the month : "+ datetime.date.today().strftime("%d") + "\n"
         dayweek = "Day of week: "+ datetime.date.today().strftime("%A") + "\n"
-        full = fulltime + year + month + week_number + weekday + dayyear + daymonth + dayweek
+        full = year + month + week_number + weekday + dayyear + daymonth + dayweek
         await client.send_message(message.channel, full)
         
         
