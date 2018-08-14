@@ -258,6 +258,10 @@ r!changegame - *Give Romani a new game!*""")
             await client.send_message(discord.Object(id='446268259721805825'), person)
             
     if message.content.startswith("r!datetime"):
+        fulldate=str(datetime.datetime.now())
+        splittime = fulldate.split(" ")
+        fulltime = "Current Time: " + splittime + "\n"
+
         year = "Current year: "+ datetime.date.today().strftime("%Y") + "\n"
         month = "Month of year: "+ datetime.date.today().strftime("%B") + "\n"
         week_number = "Week number of the year: "+ datetime.date.today().strftime("%W") + "\n"
@@ -265,7 +269,7 @@ r!changegame - *Give Romani a new game!*""")
         dayyear = "Day of year: "+ datetime.date.today().strftime("%j") + "\n"
         daymonth = "Day of the month : "+ datetime.date.today().strftime("%d") + "\n"
         dayweek = "Day of week: "+ datetime.date.today().strftime("%A") + "\n"
-        full = year + month + week_number + weekday + dayyear + daymonth + dayweek
+        full = fulltime + year + month + week_number + weekday + dayyear + daymonth + dayweek
         await client.send_message(message.channel, full)
         
             
