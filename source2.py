@@ -259,8 +259,6 @@ r!changegame - *Give Romani a new game!*""")
             
     if message.content.startswith("r!datetime"):
         fulldate=datetime.datetime.now()
-        splittime = fulldate.split(" ")
-        fulltime = "Current Time: " + splittime + "\n"
 
         year = "Current year: "+ datetime.date.today().strftime("%Y") + "\n"
         month = "Month of year: "+ datetime.date.today().strftime("%B") + "\n"
@@ -271,6 +269,21 @@ r!changegame - *Give Romani a new game!*""")
         dayweek = "Day of week: "+ datetime.date.today().strftime("%A") + "\n"
         full = fulltime + year + month + week_number + weekday + dayyear + daymonth + dayweek
         await client.send_message(message.channel, full)
+        
+        
+    if message.content.startswith("r!daily"):
+        fulllist = """
+**Monday:** Archer Training Grounds // Lancer + Assassin Ember Gathering
+**Tuesday:** Lancer Training Grounds // Saber + Rider Ember Gathering
+**Wednesday:** Berserker Training Grounds // Archer + Caster Ember Gathering
+**Thursday:** Rider Training Grounds // Lancer + Assassin Ember Gathering
+**Friday:** Caster Training Grounds // Saber + Rider Ember Gathering
+**Saturday:** Assassin Training Grounds // Archer + Caster Ember Gathering
+**Sunday:** Saber Training Grounds // <Random> Ember Gathering"""
+        e = discord.Embed()
+        e.add_field(name="**Daily Quest Rotation**", value=fulllist, inline=False)
+        await client.send_message(message.channel, msg, embed = e)
+    
         
             
     if message.content.startswith("r!roll"):
