@@ -258,8 +258,6 @@ r!changegame - *Give Romani a new game!*""")
             await client.send_message(discord.Object(id='446268259721805825'), person)
             
     if message.content.startswith("r!datetime"):
-        fulldate=datetime.datetime.now()
-
         year = "Current year: "+ datetime.date.today().strftime("%Y") + "\n"
         month = "Month of year: "+ datetime.date.today().strftime("%B") + "\n"
         week_number = "Week number of the year: "+ datetime.date.today().strftime("%W") + "\n"
@@ -281,7 +279,7 @@ r!changegame - *Give Romani a new game!*""")
 **Saturday:** Assassin Training Grounds // Archer + Caster Ember Gathering
 **Sunday:** Saber Training Grounds // <Random> Ember Gathering"""
         e = discord.Embed()
-        e.add_field(name="**Daily Quest Rotation**", value=fulllist, inline=False)
+        e.add_field(name="Daily Quest Rotation", value=fulllist, inline=False)
         await client.send_message(message.channel, msg, embed = e)
     
         
