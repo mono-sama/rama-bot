@@ -270,12 +270,9 @@ r!changegame - *Give Romani a new game!*""")
         
         
     if message.content.startswith("r!daily"):
-        fulllist = "**Monday:** Archer Training Grounds // Lancer + Assassin Ember Gathering\n**Tuesday:** Lancer Training Grounds // Saber + Rider Ember Gathering\n**Wednesday:** Berserker Training Grounds // Archer + Caster Ember Gathering\n**Thursday:** Rider Training Grounds // Lancer + Assassin Ember Gathering\n**Friday:** Caster Training Grounds // Saber + Rider Ember Gathering\n**Saturday:** Assassin Training Grounds // Archer + Caster Ember Gathering\n**Sunday:** Saber Training Grounds // <Random> Ember Gathering"
         e = discord.Embed()
-        e.add_field(name="Daily Quest Rotation", value=fulllist, inline=False)
-        await client.send_message(message.channel, msg, embed = e)
-    
-        
+        e.set_image(url="https://cdn.discordapp.com/attachments/441831504604037122/478989703316504586/DAILY_LIST.png")
+        await client.send_message(message.channel, embed = e)
             
     if message.content.startswith("r!roll"):
         args = message.content.split(" ")
