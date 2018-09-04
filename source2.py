@@ -136,7 +136,7 @@ Want to add me elsewhere? Sure thing!
         else:
             await client.send_message(message.channel, "Hey! I can't let you do that!!")
         
-    if message.content.startswith("dr roman, ") and message.content.endswith("?"):
+    if message.content.startswith("dr roman"):
         answers=["It is certain.","You may rely on it.","Ask again later.","Reply hazy, try again.","My reply is no.","My sources say no."]
         reply=random.choice(answers)
         await client.send_message(message.channel, reply)
