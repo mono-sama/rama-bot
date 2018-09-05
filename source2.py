@@ -127,6 +127,24 @@ Want to add me elsewhere? Sure thing!
     if message.content.startswith("r!randomfgo"):
             response = urllib.request.urlopen('http://fategrandorder.wikia.com/wiki/Special:Random')
             await client.send_message(message.channel, response.geturl())
+            
+            
+    if message.content.startswith("r!search"):
+        args = message.content.split(" ")
+        url_end="%s" % (" ".join(args[1:])))
+        url_end.replace(" ", "_")
+        url="http://fategrandorder.wikia.com/wiki/" + url_end
+
+        req = urllib.request.Request(url)
+        with urllib.request.urlopen(req) as response:
+            returned_page = response.read()
+   
+        if "This title wasn't found in any other Namespace" in returned_page:
+            await client.send_message(message.channel, "Article not found! Did you spell it right?")
+
+        else:
+            await client.send_message(message.channel, url)
+
 
     if message.content.startswith("r!changegame"):
         if message.author.id == "227446010094288896" or "414626125889667072" in [role.id for role in message.author.roles]:
