@@ -131,18 +131,18 @@ Want to add me elsewhere? Sure thing!
             
     if message.content.startswith("r!search"):
         args = message.content.split(" ")
-        url_end="%s" % (" ".join(args[1:])))
+        url_end="%s" % (" ".join(args[1:]))
         url_end.replace(" ", "_")
         url="http://fategrandorder.wikia.com/wiki/" + url_end
 
         with urllib.request.urlopen(url) as response:
             html = response.read()
    
-        #if "This title wasn't found in any other Namespace" in returned_page:
-            #await client.send_message(message.channel, "Article not found! Did you spell it right?")
+        if "This title wasn't found in any other Namespace" in returned_page:
+            await client.send_message(message.channel, "Article not found! Did you spell it right?")
 
-        #else:
-            #await client.send_message(message.channel, url)
+        else:
+            await client.send_message(message.channel, url)
 
 
     if message.content.startswith("r!changegame"):
