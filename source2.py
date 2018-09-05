@@ -138,7 +138,7 @@ Want to add me elsewhere? Sure thing!
         with urllib.request.urlopen(url) as response:
             html = response.read()
    
-            if "This title wasn't found in any other Namespace" in returned_page:
+            if "This title wasn't found in any other Namespace" in html:
                 await client.send_message(message.channel, "Article not found! Did you spell it right?")
 
             else:
