@@ -138,11 +138,11 @@ Want to add me elsewhere? Sure thing!
         with urllib.request.urlopen(url) as response:
             html = response.read()
    
-        if "This title wasn't found in any other Namespace" in returned_page:
-            await client.send_message(message.channel, "Article not found! Did you spell it right?")
+            if "This title wasn't found in any other Namespace" in returned_page:
+                await client.send_message(message.channel, "Article not found! Did you spell it right?")
 
-        else:
-            await client.send_message(message.channel, url)
+            else:
+                await client.send_message(message.channel, url)
 
 
     if message.content.startswith("r!changegame"):
