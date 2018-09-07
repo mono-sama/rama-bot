@@ -1,2 +1,2 @@
-# rama-bot
+# romani-bot
 my first, simple bot for discord ^^
