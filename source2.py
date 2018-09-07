@@ -243,6 +243,7 @@ Want to add me elsewhere? Sure thing!
         
         
     if message.content.startswith("r!help"):
+        
         await client.send_message(message.channel, """
 **General Procedure**
 r!hello - *Say hello!*
