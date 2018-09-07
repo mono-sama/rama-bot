@@ -243,8 +243,8 @@ Want to add me elsewhere? Sure thing!
         
         
     if message.content.startswith("r!help"):
-        
-        await client.send_message(message.channel, """
+        if "yes" in (y.name.lower() for y in message.author.roles) or "masters" in (y.name.lower() for y in message.author.roles):
+            await client.send_message(message.channel, """
 **General Procedure**
 r!hello - *Say hello!*
 r!ping - *Pong! Tests if the bot is online.*
@@ -261,10 +261,34 @@ r!birthday - *Happy Birthday!*
 r!nasty - *Lancelot booty shorts in Rome.*
 r!5star - *Can't roll any 5-stars? Pretend you did!*
 r!summon [0-10] - *F/GO NA Summon Simulator! I'm not responsible for any disappointment caused...*
+**Food Romani**
+r!foodsummon - *Food Fantasy Summon Simulator! Summon up to 6 times at once or I'll probably die!*
+r!foodkin - *Chaldea Assigned Kins - Food Fantasy version!*
+**Medical Personnel Only!**
+r!say - *Oh, you know...*
+r!changegame - *Give Romani a new game!*""")
+            
+            else:
+                await client.send_message(message.channel, """
+r!hello - *Say hello!*
+r!ping - *Pong! Tests if the bot is online.*
+r!8ball - *Use Romani's 8 ball!.*
+r!avatar - *Snatch someone's avatar!*
+r!roll [number] - *Roll a die with the specified number of sides! E.G. r!roll 20 rolls a d20, etc.*
+**Fate/Bullshit**
+r!randomfgo - *Posts a random page from the F/GO wiki.*
+r!fatekin - *Chaldea Assigned Kins!*
+r!classes - *For when you can't be bothered to check up class advantages in game.*
+r!5star - *Can't roll any 5-stars? Pretend you did!*
+r!summon [0-10] - *F/GO NA Summon Simulator! I'm not responsible for any disappointment caused...*
+**Food Romani**
+r!foodsummon - *Food Fantasy Summon Simulator! Summon up to 6 times at once or I'll probably die!*
+r!foodkin - *Chaldea Assigned Kins - Food Fantasy version!*
 **Medical Personnel Only!**
 r!say - *Oh, you know...*
 r!changegame - *Give Romani a new game!*""")
 
+        
 
     if message.content.startswith("r!supportgroup"):
         choice=random.randint(1,2)
