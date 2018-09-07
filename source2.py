@@ -139,7 +139,7 @@ Want to add me elsewhere? Sure thing!
             await client.send_message(message.channel, "You can only summon up to 6 times at once! Don't be greedy!")
         else:
             for i in range(0,option):
-            chance=random.randint(1,10000)
+                chance=random.randint(1,10000)
 
             if chance<=138:      
                 summon="M: "   
