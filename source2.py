@@ -123,6 +123,71 @@ Want to add me elsewhere? Sure thing!
             e.add_field(name="Summoning Results:", value=fulllist, inline=False)
             await client.send_message(message.channel, msg, embed = e)
 
+    if message.content.startswith("r!foodsummon"):      
+        args = message.content.split(" ")      
+        option = " ".join(args[1:])
+        option=int(option)
+        summonlist=[] 
+        fulllist="--------------\n"
+        summon=""
+        maid = [["Jello","Skewer","Pancake"],["Popcorn"]]
+        rare = [["Long Bao","Coffee","Sashimi","Macaron","Zongzi","Sakuramochi","Tom Yum","Taiyaki","Milk","Dorayaki","Sake","Tempura","Spicy Gluten"],["Jiuniang","Omurice","Orange Juice","Ume Ochazuke","Miso Soup","Yellow Wine"]]
+        superrare=[["Tiramisu","Escargot","Hotdog","Mango Pudding","Hamburger","Steak","Tangyuan","Sanma","Napoleon Cake","Salad","Pastel de nata","Yuxiang","Sukiyaki","Brownie","Red Wine","Gyoza","Chocolate"],["Eggette"],["Pineapple Cake"]]
+        ultrarare=[["Crab Long Bao","Gingerbread"],["Foie Gras","Peking Duck","B-52"],["Bamboo Rice"],["Boston Lobster","Double Scoops"]]	
+
+        if option>6:
+            await client.send_message(message.channel, "You can only summon up to 6 times at once! Don't be greedy!")
+        else:
+            for i in range(0,option):
+            chance=random.randint(1,10000)
+
+            if chance<=138:      
+                summon="M: "   
+                summon+=random.choice(maid[0])
+            elif chance<=185 and chance>138:     
+                summon="M: "
+                summon+=random.choice(maid[1])
+            elif chance<=5554 and chance>185:
+                summon="R: "    
+                summon+=random.choice(rare[0])
+            elif chance<=8038 and chance>5554:
+                summon="R: "
+                summon+=random.choice(rare[1])
+            elif chance<=9398 and chance>8038:
+                summon="SR: "
+                summon+=random.choice(superrare[0])
+            elif chance<=9548 and chance>9398:
+                summon="SR: "
+                summon+=random.choice(superrare[1])
+            elif chance<=9699 and chance>9548:
+                summon="SR: "
+                summon+=random.choice(superrare[2])
+            elif chance<=9745 and chance>9699:
+                summon="**UR**: "
+                summon+=random.choice(ultrarare[0])
+            elif chance<=9928 and chance>9745:
+                summon="**UR**: "
+                summon+=random.choice(ultrarare[1])
+            elif chance<=9990 and chance>9928:
+                summon="**UR**: "
+                summon+=random.choice(ultrarare[2])
+            elif chance<=10000 and chance>9990:
+                summon="**UR**: "
+                summon+=random.choice(ultrarare[3])
+
+            summon+="\n"
+            summonlist.append(summon)
+            for x in summonlist:
+                fulllist+=x
+            fulllist+="--------------"
+
+            msg = "{0.author.mention}".format(message)
+            e = discord.Embed()
+            e.add_field(name="Summoning Results:", value=fulllist, inline=False)
+            await client.send_message(message.channel, msg, embed = e)
+
+    
+    
     
     if message.content.startswith("r!randomfgo"):
             response = urllib.request.urlopen('http://fategrandorder.wikia.com/wiki/Special:Random')
