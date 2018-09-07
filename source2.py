@@ -268,8 +268,8 @@ r!foodkin - *Chaldea Assigned Kins - Food Fantasy version!*
 r!say - *Oh, you know...*
 r!changegame - *Give Romani a new game!*""")
             
-            else:
-                await client.send_message(message.channel, """
+        else:
+            await client.send_message(message.channel, """
 r!hello - *Say hello!*
 r!ping - *Pong! Tests if the bot is online.*
 r!8ball - *Use Romani's 8 ball!.*
