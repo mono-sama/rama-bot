@@ -279,11 +279,7 @@ r!roll [number] - *Roll a die with the specified number of sides! E.G. r!roll 20
 r!randomfgo - *Posts a random page from the F/GO wiki.*
 r!fatekin - *Chaldea Assigned Kins!*
 r!classes - *For when you can't be bothered to check up class advantages in game.*
-r!5star - *Can't roll any 5-stars? Pretend you did!*
 r!summon [0-10] - *F/GO NA Summon Simulator! I'm not responsible for any disappointment caused...*
-**Food Romani**
-r!foodsummon - *Food Fantasy Summon Simulator! Summon up to 6 times at once or I'll probably die!*
-r!foodkin - *Chaldea Assigned Kins - Food Fantasy version!*
 **Medical Personnel Only!**
 r!say - *Oh, you know...*
 r!changegame - *Give Romani a new game!*""")
