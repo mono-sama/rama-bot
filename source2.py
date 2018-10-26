@@ -37,7 +37,7 @@ Want to add me elsewhere? Sure thing!
             await client.send_message(message.channel, embed = e)
         
     if message.content.startswith("r!say"):
-        if "yes" in (y.name.lower() for y in message.author.roles) or message.author.id == "227446010094288896":
+        if "yes" in (y.name.lower() for y in message.author.roles) or message.author.id == "227446010094288896" or "yeehaw" in (y.name.lower() for y in message.author.roles):
             args = message.content.split(" ")
             await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
             if message.author.id == "227446010094288896":
@@ -243,7 +243,7 @@ Want to add me elsewhere? Sure thing!
         
         
     if message.content.startswith("r!help"):
-        if "yes" in (y.name.lower() for y in message.author.roles) or "masters" in (y.name.lower() for y in message.author.roles):
+        if "yes" in (y.name.lower() for y in message.author.roles) or "masters" in (y.name.lower() for y in message.author.roles) or "yeehaw" in (y.name.lower() for y in message.author.roles):
             await client.send_message(message.channel, """
 **General Procedure**
 r!hello - *Say hello!*
@@ -261,9 +261,6 @@ r!birthday - *Happy Birthday!*
 r!nasty - *Lancelot booty shorts in Rome.*
 r!5star - *Can't roll any 5-stars? Pretend you did!*
 r!summon [0-10] - *F/GO NA Summon Simulator! I'm not responsible for any disappointment caused...*
-**Food Romani**
-r!foodsummon - *Food Fantasy Summon Simulator! Summon up to 6 times at once or I'll probably die!*
-r!foodkin - *Chaldea Assigned Kins - Food Fantasy version!*
 **Medical Personnel Only!**
 r!say - *Oh, you know...*
 r!changegame - *Give Romani a new game!*""")
