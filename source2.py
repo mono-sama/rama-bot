@@ -306,7 +306,7 @@ r!changegame - *Give Romani a new game!*""")
         await client.send_message(message.channel, msg + " Your Chaldea assigned kin is... %s" % kin)
         
     if message.content.startswith("r!hypmickin"):
-        kinlist=["http://hypnosis-mic.wikia.com/wiki/Ichiro_Yamada","http://hypnosis-mic.wikia.com/wiki/Samatoki_Aohitsugi","http://hypnosis-mic.wikia.com/wiki/Ramuda_Amemura","http://hypnosis-mic.wikia.com/wiki/Jakurai_Jinguji","http://hypnosis-mic.wikia.com/wiki/Jiro_Yamada","http://hypnosis-mic.wikia.com/wiki/Rio_Mason_Busujima","http://hypnosis-mic.wikia.com/wiki/Gentaro_Yumeno","http://hypnosis-mic.wikia.com/wiki/Hifumi_Izanami","http://hypnosis-mic.wikia.com/wiki/Saburo_Yamada","http://hypnosis-mic.wikia.com/wiki/Jyuto_Iruma","http://hypnosis-mic.wikia.com/wiki/Dice_Arisugawa","http://hypnosis-mic.wikia.com/wiki/Kannonzaka_Doppo"]
+        kinlist=["http://hypnosis-mic.wikia.com/wiki/Ichiro_Yamada","http://hypnosis-mic.wikia.com/wiki/Samatoki_Aohitsugi","http://hypnosis-mic.wikia.com/wiki/Ramuda_Amemura","http://hypnosis-mic.wikia.com/wiki/Jakurai_Jinguji","http://hypnosis-mic.wikia.com/wiki/Jiro_Yamada","http://hypnosis-mic.wikia.com/wiki/Rio_Mason_Busujima","http://hypnosis-mic.wikia.com/wiki/Gentaro_Yumeno","http://hypnosis-mic.wikia.com/wiki/Hifumi_Izanami","http://hypnosis-mic.wikia.com/wiki/Saburo_Yamada","http://hypnosis-mic.wikia.com/wiki/Jyuto_Iruma","http://hypnosis-mic.wikia.com/wiki/Dice_Arisugawa","http://hypnosis-mic.wikia.com/wiki/Doppo_Kannonzaka"]
         kin=random.choice(kinlist)
         msg = "{0.author.mention}".format(message)
         await client.send_message(message.channel, msg + " Your Chaldea assigned kin is... %s" % kin)
