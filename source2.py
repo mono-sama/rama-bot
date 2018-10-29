@@ -230,6 +230,11 @@ Want to add me elsewhere? Sure thing!
         reply="https://www.youtube.com/watch?v=kJQP7kiw5Fk"
         await client.send_message(message.channel, reply)
         
+    if "romani" in message.content.lower() and "dailies" in message.content.lower():
+        e = discord.Embed()
+        e.set_image(url="https://cdn.discordapp.com/attachments/441831504604037122/478989703316504586/DAILY_LIST.png")
+        await client.send_message(message.channel, embed = e)
+        
     if "mozart play despacito" in message.content.lower():
         reply="https://www.youtube.com/watch?v=GmtTDvNcXcU"
         await client.send_message(message.channel, reply)
