@@ -220,7 +220,7 @@ Want to add me elsewhere? Sure thing!
             await client.send_message(message.channel, "Hey! I can't let you do that!!")
         
     if message.content.startswith("r!bones"):
-        wait client.send_message(message.channel, "Your bones are mine. :skull_crossbones: Thank you for your contribution to my programming.")
+        await client.send_message(message.channel, "Your bones are mine. :skull_crossbones: Thank you for your contribution to my programming.")
         
     if message.content.lower().startswith("dr roman"):
         answers=["It is certain.","You may rely on it.","Ask again later.","Reply hazy, try again.","My reply is no.","My sources say no."]
