@@ -200,6 +200,14 @@ Want to add me elsewhere? Sure thing!
         url_end.replace(" ", "_")
         url="http://fategrandorder.wikia.com/wiki/" + url_end
 
+        
+    if message.content.startswith('r!cleanup'):
+        tmp = await client.send_message(message.channel, 'Sweep sweep...')
+        async for msg in client.logs_from(message.channel):
+            if msg.author.id == "227446010094288896":
+                await client.delete_message(msg)
+        
+        
         with urllib.request.urlopen(url) as response:
             html = response.read()
             wig=html.decode("ascii")
