@@ -236,7 +236,7 @@ Want to add me elsewhere? Sure thing!
         await client.send_message(message.channel, reply)
         
     if "can we get an f" in message.content.lower():
-        await client.send_message(message.channel(":regional_indicator_f:")
+        await client.send_message(message.channel(":regional_indicator_f:"))
                                   
     if "doctor play despacito" in message.content.lower():
         reply="https://www.youtube.com/watch?v=kJQP7kiw5Fk"
