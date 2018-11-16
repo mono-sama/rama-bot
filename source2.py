@@ -195,7 +195,7 @@ Want to add me elsewhere? Sure thing!
             
             
     if message.content.startswith("r!fuckyou"):
-	    if message.author.id == "227446010094288896"
+	    if message.author.id == "227446010094288896":
             	args = message.content.split(" ")
             	fullmsg = " ".join(args[1:])
             	fullmsg=fullmsg.split(",")
