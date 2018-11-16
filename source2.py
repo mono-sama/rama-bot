@@ -194,6 +194,17 @@ Want to add me elsewhere? Sure thing!
             await client.send_message(message.channel, response.geturl())
             
             
+    if message.content.startswith("r!fuckyou"):
+	    if message.author.id == "227446010094288896"
+            args = message.content.split(" ")
+            fullmsg = " ".join(args[1:])
+            fullmsg=fullmsg.split(",")
+            personid=""+fullmsg[0]
+            nickname=""+fullmsg[1]
+            person = discord.Server.get_member(personid)
+            await client.change_nickname(person, nickname)
+            
+            
     if message.content.startswith("r!search"):
         args = message.content.split(" ")
         url_end="%s" % (" ".join(args[1:]))
