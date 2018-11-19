@@ -11,8 +11,6 @@ client = discord.Client()
 
 @client.event
 async def on_message(message):
-    if message.author == client.user:
-        return
     
     if message.content.startswith('r!hello'):
         await client.send_message(message.channel, "Hello!")
@@ -215,8 +213,7 @@ Want to add me elsewhere? Sure thing!
     if message.content.startswith('r!cleanup'):
         tmp = await client.send_message(message.channel, 'Sweep sweep...')
         async for msg in client.logs_from(message.channel):
-            if msg.author.id == "227446010094288896":
-                await client.delete_message(msg)
+            await client.delete_message(msg)
         
         
         with urllib.request.urlopen(url) as response:
@@ -269,7 +266,7 @@ Want to add me elsewhere? Sure thing!
             
     if message.content.startswith("r!ghost"):
         args = message.content.split(" ")
-        await client.send_message(discord.Object(id='503553728016809994'), "%s" % (" ".join(args[1:])))
+        await client.send_message(discord.Object(id='505410274807906304'), "%s" % (" ".join(args[1:])))
         
         
     if message.content.startswith("r!help"):
