@@ -33,6 +33,21 @@ Want to add me elsewhere? Sure thing!
             e = discord.Embed()
             e.set_image(url=avatarurl)
             await client.send_message(message.channel, embed = e)
+		
+		
+    if message.content.startswith("r!filter"):
+        e = discord.Embed()
+        e.set_image(url="https://cdn.discordapp.com/attachments/446268259721805825/558136747502993438/unknown.png")
+	m = discord.Embed()
+        m.set_image(url="https://cdn.discordapp.com/attachments/446268259721805825/558140256554057731/unknown.png")
+	b = discord.Embed()
+        b.set_image(url="https://cdn.discordapp.com/attachments/446268259721805825/558141627030568969/unknown.png")
+	d = discord.Embed()
+        d.set_image(url="https://cdn.discordapp.com/attachments/446268259721805825/558145395943800832/unknown.png")
+        await client.send_message(message.channel, embed = e)
+	await client.send_message(message.channel, embed = m)
+	await client.send_message(message.channel, embed = b)
+	await client.send_message(message.channel, embed = d)
         
     if message.content.startswith("r!say"):
         if "yes" in (y.name.lower() for y in message.author.roles) or message.author.id == "227446010094288896" or "yeehaw" in (y.name.lower() for y in message.author.roles):
