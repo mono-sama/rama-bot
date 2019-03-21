@@ -37,7 +37,7 @@ Want to add me elsewhere? Sure thing!
 		
     if message.content.startswith("r!ce"):
         e = discord.Embed()
-        e.set_image(url="https://cdn.discordapp.com/attachments/446268259721805825/558136747502993438/unknown.png")
+        e.set_image(url="https://cdn.discordapp.com/attachments/446268259721805825/558153983638896650/unknown.png")
         await client.send_message(message.channel, embed = e)
 	
     if message.content.startswith("r!say"):
