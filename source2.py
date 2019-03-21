@@ -70,7 +70,7 @@ Want to add me elsewhere? Sure thing!
 	
 
     if message.content.startswith("r!ping"):
-            await client.send_message(message.channel, "Pong!")
+        await client.send_message(message.channel, "Pong!")
     
     if message.content.startswith("r!summon"):
         args = message.content.split(" ")
