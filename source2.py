@@ -55,7 +55,7 @@ Want to add me elsewhere? Sure thing!
         await client.send_message(message.channel, msg, embed = e)
 
     if message.content.startswith("r!filter"):
-	e=discord.Embed(title="Attack", color=0x710000)
+	e=discord.Embed(title="Attack", color="0x710000")
 	e.add_field(name='\u200b', value="Damage Up", inline=True)
 	e.add_field(name='\u200b', value="Quick Up", inline=True)
 	e.add_field(name='\u200b', value="Arts Up", inline=True)
