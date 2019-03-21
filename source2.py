@@ -54,6 +54,29 @@ Want to add me elsewhere? Sure thing!
         e.set_image(url="https://cdn.discordapp.com/attachments/414700659884163073/456518684698083338/unknown.png")
         await client.send_message(message.channel, msg, embed = e)
 
+    if message.content.startswith("r!filter"):
+	e=discord.Embed(title="Attack", color=0x710000)
+	e.add_field(name=, value="Damage Up", inline=True)
+	e.add_field(name=, value="Quick Up", inline=True)
+	e.add_field(name=, value="Arts Up", inline=True)
+	e.add_field(name=, value="Buster Up", inline=True)
+	e.add_field(name=, value="Special Damage Up", inline=True)
+	e.add_field(name=, value="Flat Damage Up", inline=True)
+	e.add_field(name=, value="Crit Damage Up", inline=True)
+	e.add_field(name=, value="Star Gen Up", inline=True)
+	e.add_field(name=, value="Star Focus Up", inline=True)
+	e.add_field(name=, value="Gain Stars", inline=True)
+	e.add_field(name=, value="Gain Stars/Turn, inline=True)
+	e.add_field(name=, value="NP Damage Up", inline=True)
+	e.add_field(name=, value="Gain NP", inline=True)
+	e.add_field(name=, value="Gain NP/Turn", inline=True)
+	e.add_field(name=, value="NP Gain Up", inline=True)
+	e.add_field(name=, value="NP Charge Lvl Up", inline=True)
+	e.add_field(name=, value="Sure Hit", inline=True)
+	e.add_field(name=, value="Invulnerability Pierce", inline=True)
+	e.add_field(name=, value="Ignore Defense", inline=True)
+	await client.send_message(message.channel, embed = e)
+
     if message.content.startswith("r!ping"):
             await client.send_message(message.channel, "Pong!")
     
