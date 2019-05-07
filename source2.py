@@ -273,6 +273,11 @@ Want to add me elsewhere? Sure thing!
     if message.content.startswith("r!ghost"):
         args = message.content.split(" ")
         await client.send_message(discord.Object(id='460772285163241474'), "%s" % (" ".join(args[1:])))
+	
+    if message.content.startswith("r!doittoem"):
+	e = discord.Embed()
+        e.set_image(url="https://cdn.discordapp.com/attachments/441831504604037122/575453243430273044/unknown.png")
+        await client.send_message(discord.Object(id='460772285163241474'), embed = e)
         
         
     if message.content.startswith("r!help"):
