@@ -281,43 +281,20 @@ Want to add me elsewhere? Sure thing!
         
         
     if message.content.startswith("r!help"):
-        if "yes" in (y.name.lower() for y in message.author.roles) or "masters" in (y.name.lower() for y in message.author.roles) or "yeehaw" in (y.name.lower() for y in message.author.roles):
-            await client.send_message(message.channel, """
-**General Procedure**
+        await client.send_message(message.channel, """
 r!hello - *Say hello!*
 r!ping - *Pong! Tests if the bot is online.*
 r!8ball - *Use Romani's 8 ball!.*
 r!avatar - *Snatch someone's avatar!*
 r!roll [number] - *Roll a die with the specified number of sides! E.G. r!roll 20 rolls a d20, etc.*
-**Fate/Bullshit**
-r!respect - *F.*
+**Fate**
 r!randomfgo - *Posts a random page from the F/GO wiki.*
 r!fatekin - *Chaldea Assigned Kins!*
 r!classes - *For when you can't be bothered to check up class advantages in game.*
-r!lancelot - *Lancelot fucks.*
-r!birthday - *Happy Birthday!*
-r!nasty - *Lancelot booty shorts in Rome.*
-r!5star - *Can't roll any 5-stars? Pretend you did!*
-r!summon [0-10] - *F/GO NA Summon Simulator! I'm not responsible for any disappointment caused...*
+r!summon [0-10] - *F/GO NA Summon Simulator! I'm not responsible for any disappointment caused... NOTE: NOT UPDATED*
 **Medical Personnel Only!**
-r!say - *Oh, you know...*
-r!changegame - *Give Romani a new game!*""")
-            
-        else:
-            await client.send_message(message.channel, """
-r!hello - *Say hello!*
-r!ping - *Pong! Tests if the bot is online.*
-r!8ball - *Use Romani's 8 ball!.*
-r!avatar - *Snatch someone's avatar!*
-r!roll [number] - *Roll a die with the specified number of sides! E.G. r!roll 20 rolls a d20, etc.*
-**Fate/Bullshit**
-r!randomfgo - *Posts a random page from the F/GO wiki.*
-r!fatekin - *Chaldea Assigned Kins!*
-r!classes - *For when you can't be bothered to check up class advantages in game.*
-r!summon [0-10] - *F/GO NA Summon Simulator! I'm not responsible for any disappointment caused...*
-**Medical Personnel Only!**
-r!say - *Oh, you know...*
-r!changegame - *Give Romani a new game!*""")
+r!say
+r!changegame""")
 
         
 
