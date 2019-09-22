@@ -201,39 +201,12 @@ Want to add me elsewhere? Sure thing!
             await client.send_message(message.channel, response.geturl())
             
             
-    if message.content.startswith("r!fuckyou"):
-	    if message.author.id == "227446010094288896":
-            	args = message.content.split(" ")
-            	fullmsg = " ".join(args[1:])
-            	fullmsg=fullmsg.split(",")
-            	personid=""+fullmsg[0]
-            	nickname=""+fullmsg[1]
-            	person = discord.Server.get_member(personid)
-            	await client.change_nickname(person, nickname)
-            
-            
-    if message.content.startswith("r!search"):
-        args = message.content.split(" ")
-        url_end="%s" % (" ".join(args[1:]))
-        url_end.replace(" ", "_")
-        url="http://fategrandorder.wikia.com/wiki/" + url_end
-
-        
     if message.content.startswith('r!cleanup'):
         tmp = await client.send_message(message.channel, 'Sweep sweep...')
         async for msg in client.logs_from(message.channel):
             await client.delete_message(msg)
         
-        
-        with urllib.request.urlopen(url) as response:
-            html = response.read()
-            wig=html.decode("ascii")
-   
-            if "This title wasn't found in any other Namespace" in wig:
-                await client.send_message(message.channel, "Article not found! Did you spell it right?")
 
-            else:
-                await client.send_message(message.channel, url)
 
 
     if message.content.startswith("r!changegame"):
@@ -243,9 +216,6 @@ Want to add me elsewhere? Sure thing!
             await client.change_presence(game=discord.Game(name="%s" % (" ".join(args[1:]))))
         else:
             await client.send_message(message.channel, "Hey! I can't let you do that!!")
-        
-    if message.content.startswith("r!bones"):
-        await client.send_message(message.channel, "Your bones are mine. :skull_crossbones: Thank you for your contribution to my programming.")
         
     if message.content.lower().startswith("dr roman"):
         answers=["It is certain.","You may rely on it.","Ask again later.","Reply hazy, try again.","My reply is no.","My sources say no."]
@@ -258,12 +228,7 @@ Want to add me elsewhere? Sure thing!
     if "doctor play despacito" in message.content.lower():
         reply="https://www.youtube.com/watch?v=kJQP7kiw5Fk"
         await client.send_message(message.channel, reply)
-        
-    if "romani" in message.content.lower() and "dailies" in message.content.lower():
-        e = discord.Embed()
-        e.set_image(url="https://cdn.discordapp.com/attachments/441831504604037122/478989703316504586/DAILY_LIST.png")
-        await client.send_message(message.channel, embed = e)
-        
+
     if "mozart play despacito" in message.content.lower():
         reply="https://www.youtube.com/watch?v=GmtTDvNcXcU"
         await client.send_message(message.channel, reply)
@@ -275,12 +240,12 @@ Want to add me elsewhere? Sure thing!
             
     if message.content.startswith("r!ghost"):
         args = message.content.split(" ")
-        await client.send_message(discord.Object(id='460772285163241474'), "%s" % (" ".join(args[1:])))
+        await client.send_message(discord.Object(id='599082261941583884'), "%s" % (" ".join(args[1:])))
 	
     if message.content.startswith("r!hee"):
         e = discord.Embed()
         e.set_image(url="https://cdn.discordapp.com/attachments/441831504604037122/575453243430273044/unknown.png")
-        await client.send_message(discord.Object(id='460772285163241474'), embed = e)
+        await client.send_message(discord.Object(id='599082261941583884'), embed = e)
         
         
     if message.content.startswith("r!help"):
